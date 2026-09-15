@@ -1,0 +1,1069 @@
+{
+  "generatedAt": "2026-09-15T06:25:08.794Z",
+  "total": 153,
+  "matched": 148,
+  "failed": 5,
+  "byId": {
+    "sakura-haruno-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b145-IorfpI8arxeX.png",
+      "anilistId": 145,
+      "anilistName": "Sakura Haruno",
+      "search": "Sakura Haruno",
+      "matched": true
+    },
+    "usopp-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b724-GFGgI9AJQkfy.jpg",
+      "anilistId": 724,
+      "anilistName": "Usopp",
+      "search": "Usopp",
+      "matched": true
+    },
+    "konohamaru-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/n3889-gCUewPsRY2kD.png",
+      "anilistId": 3889,
+      "anilistName": "Konohamaru Sarutobi",
+      "search": "Konohamaru",
+      "matched": true
+    },
+    "zenitsu-agatsuma-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b129131-FZrQ7lSlxmEr.png",
+      "anilistId": 129131,
+      "anilistName": "Zenitsu Agatsuma",
+      "search": "Zenitsu Agatsuma",
+      "matched": true
+    },
+    "krillin-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2159-qtEuMYyOUkwY.jpg",
+      "anilistId": 2159,
+      "anilistName": "Kuririn",
+      "search": "Krillin",
+      "matched": true
+    },
+    "yamcha-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b4014-of2ONLvA7T8p.jpg",
+      "anilistId": 4014,
+      "anilistName": "Yamcha",
+      "search": "Yamcha",
+      "matched": true
+    },
+    "mumen-rider-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b81935-NGDgB9J4MMlF.png",
+      "anilistId": 81935,
+      "anilistName": "Satoru",
+      "search": "Mumen Rider",
+      "matched": true
+    },
+    "koby-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b12361-H0SmgKxZ9T61.png",
+      "anilistId": 12361,
+      "anilistName": "Koby",
+      "search": "Koby",
+      "matched": true
+    },
+    "armin-arlert-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b46494-g7xYYuBtYPnO.png",
+      "anilistId": 46494,
+      "anilistName": "Armin Arlert",
+      "search": "Armin Arlert",
+      "matched": true
+    },
+    "kazuha-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89901-XCnkga69pLN9.png",
+      "anilistId": 89901,
+      "anilistName": "Kouji Kouda",
+      "search": "Koji Koda",
+      "matched": true
+    },
+    "chopper-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b309-H64NhbJ2ywIQ.jpg",
+      "anilistId": 309,
+      "anilistName": "Chopper Tony Tony",
+      "search": "Tony Tony Chopper",
+      "matched": true
+    },
+    "hinata-hyuga-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1555-Q41GLTV3FvYF.png",
+      "anilistId": 1555,
+      "anilistName": "Hinata Hyuuga",
+      "search": "Hinata Hyuuga",
+      "matched": true
+    },
+    "nobara-kugisaki-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b133700-f6sOO3TcgLV6.png",
+      "anilistId": 133700,
+      "anilistName": "Nobara Kugisaki",
+      "search": "Nobara Kugisaki",
+      "matched": true
+    },
+    "orihime-inoue-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b7-JdR4betokDjR.jpg",
+      "anilistId": 7,
+      "anilistName": "Orihime Inoue",
+      "search": "Orihime Inoue",
+      "matched": true
+    },
+    "sokka-commun": {
+      "image": null,
+      "search": "Sokka",
+      "matched": false
+    },
+    "rock-lee-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b306-oUTOO45xInXt.png",
+      "anilistId": 306,
+      "anilistName": "Rock Lee",
+      "search": "Rock Lee",
+      "matched": true
+    },
+    "neji-hyuga-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1694-TL4obouDwJ7k.jpg",
+      "anilistId": 1694,
+      "anilistName": "Neji Hyuuga",
+      "search": "Neji Hyuuga",
+      "matched": true
+    },
+    "inosuke-hashibira-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/n129130-SJC0Kn1DU39E.jpg",
+      "anilistId": 129130,
+      "anilistName": "Inosuke Hashibira",
+      "search": "Inosuke Hashibira",
+      "matched": true
+    },
+    "tanjiro-kamado-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126071-BTNEc1nRIv68.png",
+      "anilistId": 126071,
+      "anilistName": "Tanjirou Kamado",
+      "search": "Tanjirou Kamado",
+      "matched": true
+    },
+    "mikasa-ackerman-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40881-F3gr1PkreDvj.png",
+      "anilistId": 40881,
+      "anilistName": "Mikasa Ackerman",
+      "search": "Mikasa Ackerman",
+      "matched": true
+    },
+    "eren-yeager-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40882-dsj7IP943WFF.jpg",
+      "anilistId": 40882,
+      "anilistName": "Eren Yeager",
+      "search": "Eren Yeager",
+      "matched": true
+    },
+    "shikamaru-nara-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2007-QaesJlIZDifj.jpg",
+      "anilistId": 2007,
+      "anilistName": "Shikamaru Nara",
+      "search": "Shikamaru Nara",
+      "matched": true
+    },
+    "franky-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/n64-ChX6ZzHHjXqA.png",
+      "anilistId": 64,
+      "anilistName": "Franky",
+      "search": "Franky",
+      "matched": true
+    },
+    "brook-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5627-av8oD3zhKvDl.png",
+      "anilistId": 5627,
+      "anilistName": "Brook",
+      "search": "Brook",
+      "matched": true
+    },
+    "tengen-uzui-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b136071-99Kexnnn2PiV.png",
+      "anilistId": 136071,
+      "anilistName": "Tengen Uzui",
+      "search": "Tengen Uzui",
+      "matched": true
+    },
+    "megumi-fushiguro-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126635-L0y3I92JSUkN.png",
+      "anilistId": 126635,
+      "anilistName": "Megumi Fushiguro",
+      "search": "Megumi Fushiguro",
+      "matched": true
+    },
+    "maki-zenin-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b134167-5TCytk45YByD.png",
+      "anilistId": 134167,
+      "anilistName": "Maki Zenin",
+      "search": "Maki Zenin",
+      "matched": true
+    },
+    "asta-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123285-tKijiuQErDS0.png",
+      "anilistId": 123285,
+      "anilistName": "Asta",
+      "search": "Asta",
+      "matched": true
+    },
+    "yuno-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123284-w6kIFYnTclMd.png",
+      "anilistId": 123284,
+      "anilistName": "Yuno",
+      "search": "Yuno",
+      "matched": true
+    },
+    "killua-zoldyck-peu-commun": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b27-Z5O02kQUydpT.jpg",
+      "anilistId": 27,
+      "anilistName": "Killua Zoldyck",
+      "search": "Killua Zoldyck",
+      "matched": true
+    },
+    "kakashi-hatake-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b85-mkVBh2yjxjmx.png",
+      "anilistId": 85,
+      "anilistName": "Kakashi Hatake",
+      "search": "Kakashi Hatake",
+      "matched": true
+    },
+    "gaara-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1662-4E5J0LX9jZKZ.png",
+      "anilistId": 1662,
+      "anilistName": "Gaara",
+      "search": "Gaara",
+      "matched": true
+    },
+    "jiraiya-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2423-RO5MyoXSA9OL.png",
+      "anilistId": 2423,
+      "anilistName": "Jiraiya",
+      "search": "Jiraiya",
+      "matched": true
+    },
+    "trafalgar-law-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b13767-U604OJN9dxCn.jpg",
+      "anilistId": 13767,
+      "anilistName": "Law Trafalgar",
+      "search": "Trafalgar Law",
+      "matched": true
+    },
+    "sanji-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b305-6lisPmHtCnLT.png",
+      "anilistId": 305,
+      "anilistName": "Sanji",
+      "search": "Sanji",
+      "matched": true
+    },
+    "roronoa-zoro-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b62-S7oAeA9WInjV.png",
+      "anilistId": 62,
+      "anilistName": "Zoro Roronoa",
+      "search": "Roronoa Zoro",
+      "matched": true
+    },
+    "portgas-d-ace-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2072-Lc6jEdsueJUK.jpg",
+      "anilistId": 2072,
+      "anilistName": "Ace Portgas",
+      "search": "Portgas D. Ace",
+      "matched": true
+    },
+    "doflamingo-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2754-B4gGSlNYgsyh.jpg",
+      "anilistId": 2754,
+      "anilistName": "Doflamingo Donquixote",
+      "search": "Donquixote Doflamingo",
+      "matched": true
+    },
+    "hisoka-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b31-FZckOuu7L1un.png",
+      "anilistId": 31,
+      "anilistName": "Hisoka Morow",
+      "search": "Hisoka Morow",
+      "matched": true
+    },
+    "chrollo-lucilfer-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b58-USOmsz3nursi.jpg",
+      "anilistId": 58,
+      "anilistName": "Chrollo Lucilfer",
+      "search": "Chrollo Lucilfer",
+      "matched": true
+    },
+    "akaza-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b141694-0COi0GVXPuEn.png",
+      "anilistId": 141694,
+      "anilistName": "Akaza",
+      "search": "Akaza",
+      "matched": true
+    },
+    "giyu-tomioka-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b130050-qsLThJs5VIbz.png",
+      "anilistId": 130050,
+      "anilistName": "Giyuu Tomioka",
+      "search": "Giyuu Tomioka",
+      "matched": true
+    },
+    "shoto-todoroki-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89220-KNBwaVFAR8FD.png",
+      "anilistId": 89220,
+      "anilistName": "Shouto Todoroki",
+      "search": "Shoto Todoroki",
+      "matched": true
+    },
+    "katsuki-bakugo-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88892-bdOha3lNcaN6.png",
+      "anilistId": 88892,
+      "anilistName": "Katsuki Bakugou",
+      "search": "Katsuki Bakugo",
+      "matched": true
+    },
+    "eijiro-kirishima-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89243-R2WJlNuj3aEs.jpg",
+      "anilistId": 89243,
+      "anilistName": "Eijirou Kirishima",
+      "search": "Eijiro Kirishima",
+      "matched": true
+    },
+    "levi-ackerman-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+      "anilistId": 45627,
+      "anilistName": "Levi",
+      "search": "Levi",
+      "matched": true
+    },
+    "yami-sukehiro-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b124440-Lpdo6y8cljV6.png",
+      "anilistId": 124440,
+      "anilistName": "Yami Sukehiro",
+      "search": "Yami Sukehiro",
+      "matched": true
+    },
+    "mereoleona-vermillion-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b124522-lJK4Hy6Aokie.png",
+      "anilistId": 124522,
+      "anilistName": "Mereoleona Vermillion",
+      "search": "Mereoleona Vermillion",
+      "matched": true
+    },
+    "eren-titan-originel-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40882-dsj7IP943WFF.jpg",
+      "anilistId": 40882,
+      "anilistName": "Eren Yeager",
+      "search": "Eren Yeager",
+      "matched": true
+    },
+    "denji-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b130102-FO1VHNnEnLlB.png",
+      "anilistId": 130102,
+      "anilistName": "Denji",
+      "search": "Denji",
+      "matched": true
+    },
+    "naruto-uzumaki-mode-ermite-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b17-phjcWCkRuIhu.png",
+      "anilistId": 17,
+      "anilistName": "Naruto Uzumaki",
+      "search": "Naruto Uzumaki",
+      "matched": true
+    },
+    "sasuke-uchiha-rinnegan-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b13-SISLEw1oAD7a.png",
+      "anilistId": 13,
+      "anilistName": "Sasuke Uchiha",
+      "search": "Sasuke Uchiha",
+      "matched": true
+    },
+    "madara-uchiha-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b53901-HnRKSoHMG5Vg.png",
+      "anilistId": 53901,
+      "anilistName": "Madara Uchiha",
+      "search": "Madara Uchiha",
+      "matched": true
+    },
+    "itachi-uchiha-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b14-9Kb1E5oel1ke.png",
+      "anilistId": 14,
+      "anilistName": "Itachi Uchiha",
+      "search": "Itachi Uchiha",
+      "matched": true
+    },
+    "obito-uchiha-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b188432-WePQBJsEuSts.png",
+      "anilistId": 188432,
+      "anilistName": "Naobito Zenin",
+      "search": "Obito",
+      "matched": true
+    },
+    "monkey-d-luffy-gear-5-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40-MNypXsxSRb1R.png",
+      "anilistId": 40,
+      "anilistName": "Luffy Monkey",
+      "search": "Monkey D. Luffy",
+      "matched": true
+    },
+    "roronoa-zoro-roi-de-l-enfer-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b62-S7oAeA9WInjV.png",
+      "anilistId": 62,
+      "anilistName": "Zoro Roronoa",
+      "search": "Roronoa Zoro",
+      "matched": true
+    },
+    "shanks-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b727-wUJx7M1z5xON.png",
+      "anilistId": 727,
+      "anilistName": "Shanks",
+      "search": "Shanks",
+      "matched": true
+    },
+    "marshall-d-teach-barbe-noire-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b3331-7ZJDc4BNv9Yp.jpg",
+      "anilistId": 3331,
+      "anilistName": "Teach Marshall",
+      "search": "Marshall D. Teach",
+      "matched": true
+    },
+    "yamato-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b176840-8KRqXXLJeLOg.png",
+      "anilistId": 176840,
+      "anilistName": "Yamato",
+      "search": "Yamato",
+      "matched": true
+    },
+    "ichigo-kurosaki-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5-a7bkJgjhhigE.png",
+      "anilistId": 5,
+      "anilistName": "Ichigo Kurosaki",
+      "search": "Ichigo Kurosaki",
+      "matched": true
+    },
+    "kenpachi-zaraki-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b909-slhoFBon7oiH.jpg",
+      "anilistId": 909,
+      "anilistName": "Kenpachi Zaraki",
+      "search": "Kenpachi Zaraki",
+      "matched": true
+    },
+    "byakuya-kuchiki-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b907-kgnDKeMtEN5y.png",
+      "anilistId": 907,
+      "anilistName": "Byakuya Kuchiki",
+      "search": "Byakuya Kuchiki",
+      "matched": true
+    },
+    "toshiro-hitsugaya-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b245-buy3Cfn6IFSB.jpg",
+      "anilistId": 245,
+      "anilistName": "Toushirou Hitsugaya",
+      "search": "Toushirou Hitsugaya",
+      "matched": true
+    },
+    "yusuke-urameshi-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b729-V6GlADOEZv3x.png",
+      "anilistId": 729,
+      "anilistName": "Yuusuke Urameshi",
+      "search": "Yusuke Urameshi",
+      "matched": true
+    },
+    "hiei-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b732-rg4H7yyv3LRo.png",
+      "anilistId": 732,
+      "anilistName": "Hiei",
+      "search": "Hiei",
+      "matched": true
+    },
+    "gon-freecss-adulte-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b30-lyFExKyDhefc.jpg",
+      "anilistId": 30,
+      "anilistName": "Gon Freecss",
+      "search": "Gon Freecss",
+      "matched": true
+    },
+    "meruem-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b23277-EYmIxzL64Mji.png",
+      "anilistId": 23277,
+      "anilistName": "Meruem",
+      "search": "Meruem",
+      "matched": true
+    },
+    "satoru-gojo-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
+      "anilistId": 127691,
+      "anilistName": "Satoru Gojou",
+      "search": "Satoru Gojo",
+      "matched": true
+    },
+    "ryomen-sukuna-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b133701-rCQuDpHr3UZL.png",
+      "anilistId": 133701,
+      "anilistName": "Sukuna",
+      "search": "Sukuna",
+      "matched": true
+    },
+    "yuta-okkotsu-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b129571-GHJk7gviHOOw.jpg",
+      "anilistId": 129571,
+      "anilistName": "Yuuta Okkotsu",
+      "search": "Yuta Okkotsu",
+      "matched": true
+    },
+    "toji-fushiguro-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b162722-btzdghBizxKS.jpg",
+      "anilistId": 162722,
+      "anilistName": "Touji Fushiguro",
+      "search": "Toji Fushiguro",
+      "matched": true
+    },
+    "muzan-kibutsuji-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b129132-4nIZakUZ1o8W.jpg",
+      "anilistId": 129132,
+      "anilistName": "Muzan Kibutsuji",
+      "search": "Muzan Kibutsuji",
+      "matched": true
+    },
+    "all-might-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89224-K6KEuQAuYKzq.jpg",
+      "anilistId": 89224,
+      "anilistName": "Toshinori Yagi",
+      "search": "All Might",
+      "matched": true
+    },
+    "shigaraki-tomura-super-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89226-qGXqFthO4SM3.jpg",
+      "anilistId": 89226,
+      "anilistName": "Tomura Shigaraki",
+      "search": "Tomura Shigaraki",
+      "matched": true
+    },
+    "son-goku-super-saiyan-3-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/246-wsRRr6z1kii8.png",
+      "anilistId": 246,
+      "anilistName": "Gokuu Son",
+      "search": "Son Goku",
+      "matched": true
+    },
+    "son-goku-ultra-instinct-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/246-wsRRr6z1kii8.png",
+      "anilistId": 246,
+      "anilistName": "Gokuu Son",
+      "search": "Son Goku",
+      "matched": true
+    },
+    "vegeta-ultra-ego-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b913-NIFkKazWM8VO.png",
+      "anilistId": 913,
+      "anilistName": "Vegeta",
+      "search": "Vegeta",
+      "matched": true
+    },
+    "gogeta-super-saiyan-blue-ultra-rare": {
+      "image": null,
+      "search": "Gogeta",
+      "matched": false
+    },
+    "vegito-super-saiyan-blue-ultra-rare": {
+      "image": null,
+      "search": "Vegito",
+      "matched": false
+    },
+    "broly-full-power-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b4945-iE59qIP7TxPu.png",
+      "anilistId": 4945,
+      "anilistName": "Broly",
+      "search": "Broly",
+      "matched": true
+    },
+    "beerus-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b76348-pGWrznfxgPIV.png",
+      "anilistId": 76348,
+      "anilistName": "Beerus",
+      "search": "Beerus",
+      "matched": true
+    },
+    "whis-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b76346-BNh2DE5Rh2IW.jpg",
+      "anilistId": 76346,
+      "anilistName": "Whis",
+      "search": "Whis",
+      "matched": true
+    },
+    "naruto-mode-baryon-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b17-phjcWCkRuIhu.png",
+      "anilistId": 17,
+      "anilistName": "Naruto Uzumaki",
+      "search": "Naruto Uzumaki",
+      "matched": true
+    },
+    "sasuke-susanoo-parfait-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b13-SISLEw1oAD7a.png",
+      "anilistId": 13,
+      "anilistName": "Sasuke Uchiha",
+      "search": "Sasuke Uchiha",
+      "matched": true
+    },
+    "kaguya-otsutsuki-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126069-CYxn8C4AHwiD.png",
+      "anilistId": 126069,
+      "anilistName": "Kaguya Ootsutsuki",
+      "search": "Kaguya Ootsutsuki",
+      "matched": true
+    },
+    "hashirama-senju-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/n12464-fcgqkCPZoREw.png",
+      "anilistId": 12464,
+      "anilistName": "Hashirama Senju",
+      "search": "Hashirama Senju",
+      "matched": true
+    },
+    "luffy-gear-5-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40-MNypXsxSRb1R.png",
+      "anilistId": 40,
+      "anilistName": "Luffy Monkey",
+      "search": "Monkey D. Luffy",
+      "matched": true
+    },
+    "kaido-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b46109-MT7Hm4Bk93In.png",
+      "anilistId": 46109,
+      "anilistName": "Kaidou",
+      "search": "Kaido",
+      "matched": true
+    },
+    "shanks-haki-des-rois-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b727-wUJx7M1z5xON.png",
+      "anilistId": 727,
+      "anilistName": "Shanks",
+      "search": "Shanks",
+      "matched": true
+    },
+    "gol-d-roger-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b4883-0t76xH00sehO.png",
+      "anilistId": 4883,
+      "anilistName": "Roger Gold",
+      "search": "Gol D. Roger",
+      "matched": true
+    },
+    "edward-newgate-barbe-blanche-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2751-NnzW0N2vCTjX.jpg",
+      "anilistId": 2751,
+      "anilistName": "Newgate Edward",
+      "search": "Edward Newgate",
+      "matched": true
+    },
+    "ichigo-bankai-final-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5-a7bkJgjhhigE.png",
+      "anilistId": 5,
+      "anilistName": "Ichigo Kurosaki",
+      "search": "Ichigo Kurosaki",
+      "matched": true
+    },
+    "sosuke-aizen-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1086-qR9218BjZTC0.png",
+      "anilistId": 1086,
+      "anilistName": "Sousuke Aizen",
+      "search": "Sousuke Aizen",
+      "matched": true
+    },
+    "yhwach-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b68537-1bRB5OdseCp0.jpg",
+      "anilistId": 68537,
+      "anilistName": "Yhwach",
+      "search": "Yhwach",
+      "matched": true
+    },
+    "saitama-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b73935-ON5d0mAcrItd.jpg",
+      "anilistId": 73935,
+      "anilistName": "Saitama",
+      "search": "Saitama",
+      "matched": true
+    },
+    "garou-cosmique-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89277-xBGb4B5YISXg.png",
+      "anilistId": 89277,
+      "anilistName": "Garou",
+      "search": "Garou",
+      "matched": true
+    },
+    "tatsumaki-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b81929-WPVp2LQoWgkc.png",
+      "anilistId": 81929,
+      "anilistName": "Tatsumaki",
+      "search": "Tatsumaki",
+      "matched": true
+    },
+    "sung-jin-woo-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b294852-9soO95KHhQ4l.png",
+      "anilistId": 294852,
+      "anilistName": "Woo-Sung Jin",
+      "search": "Sung Jin-Woo",
+      "matched": true
+    },
+    "jin-mori-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b124136-mdvrdRyKVn4R.png",
+      "anilistId": 124136,
+      "anilistName": "Mo-Ri Jin",
+      "search": "Jin Mori",
+      "matched": true
+    },
+    "rimuru-tempest-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123962-eL9yGV0NLMF7.png",
+      "anilistId": 123962,
+      "anilistName": "Rimuru Tempest",
+      "search": "Rimuru Tempest",
+      "matched": true
+    },
+    "meliodas-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b72921-XDHNd1wflN6P.png",
+      "anilistId": 72921,
+      "anilistName": "Meliodas",
+      "search": "Meliodas",
+      "matched": true
+    },
+    "escanor-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b90202-1H7FIX2hDmYd.png",
+      "anilistId": 90202,
+      "anilistName": "Escanor",
+      "search": "Escanor",
+      "matched": true
+    },
+    "arthur-pendragon-chaos-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b122210-l6g1EMCf5NdE.png",
+      "anilistId": 122210,
+      "anilistName": "Arthur Pendragon",
+      "search": "Arthur Pendragon",
+      "matched": true
+    },
+    "asta-union-avec-liebe-ultra-rare": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123285-tKijiuQErDS0.png",
+      "anilistId": 123285,
+      "anilistName": "Asta",
+      "search": "Asta",
+      "matched": true
+    },
+    "son-goku-ultra-instinct-maitrise-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/246-wsRRr6z1kii8.png",
+      "anilistId": 246,
+      "anilistName": "Gokuu Son",
+      "search": "Son Goku",
+      "matched": true
+    },
+    "vegeta-ultra-ego-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b913-NIFkKazWM8VO.png",
+      "anilistId": 913,
+      "anilistName": "Vegeta",
+      "search": "Vegeta",
+      "matched": true
+    },
+    "gogeta-legendaire": {
+      "image": null,
+      "search": "Gogeta",
+      "matched": false
+    },
+    "vegito-legendaire": {
+      "image": null,
+      "search": "Vegito",
+      "matched": false
+    },
+    "broly-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b4945-iE59qIP7TxPu.png",
+      "anilistId": 4945,
+      "anilistName": "Broly",
+      "search": "Broly",
+      "matched": true
+    },
+    "jiren-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126257-nGjgbsnxZkUB.png",
+      "anilistId": 126257,
+      "anilistName": "Jiren",
+      "search": "Jiren",
+      "matched": true
+    },
+    "grand-pretre-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/127217-c4K0tjHvgL8x.jpg",
+      "anilistId": 127217,
+      "anilistName": "Daishinkan",
+      "search": "Grand Priest",
+      "matched": true
+    },
+    "naruto-mode-baryon-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b17-phjcWCkRuIhu.png",
+      "anilistId": 17,
+      "anilistName": "Naruto Uzumaki",
+      "search": "Naruto Uzumaki",
+      "matched": true
+    },
+    "sasuke-rinnegan-complet-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b13-SISLEw1oAD7a.png",
+      "anilistId": 13,
+      "anilistName": "Sasuke Uchiha",
+      "search": "Sasuke Uchiha",
+      "matched": true
+    },
+    "madara-jinchuriki-de-jubi-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b53901-HnRKSoHMG5Vg.png",
+      "anilistId": 53901,
+      "anilistName": "Madara Uchiha",
+      "search": "Madara Uchiha",
+      "matched": true
+    },
+    "kaguya-otsutsuki-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126069-CYxn8C4AHwiD.png",
+      "anilistId": 126069,
+      "anilistName": "Kaguya Ootsutsuki",
+      "search": "Kaguya Ootsutsuki",
+      "matched": true
+    },
+    "luffy-gear-5-eveille-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40-MNypXsxSRb1R.png",
+      "anilistId": 40,
+      "anilistName": "Luffy Monkey",
+      "search": "Monkey D. Luffy",
+      "matched": true
+    },
+    "gol-d-roger-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b4883-0t76xH00sehO.png",
+      "anilistId": 4883,
+      "anilistName": "Roger Gold",
+      "search": "Gol D. Roger",
+      "matched": true
+    },
+    "barbe-blanche-prime-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2751-NnzW0N2vCTjX.jpg",
+      "anilistId": 2751,
+      "anilistName": "Newgate Edward",
+      "search": "Edward Newgate",
+      "matched": true
+    },
+    "shanks-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b727-wUJx7M1z5xON.png",
+      "anilistId": 727,
+      "anilistName": "Shanks",
+      "search": "Shanks",
+      "matched": true
+    },
+    "imu-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b128130-X9N46ajhSMOi.png",
+      "anilistId": 128130,
+      "anilistName": "Imu",
+      "search": "Imu",
+      "matched": true
+    },
+    "ichigo-veritable-bankai-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5-a7bkJgjhhigE.png",
+      "anilistId": 5,
+      "anilistName": "Ichigo Kurosaki",
+      "search": "Ichigo Kurosaki",
+      "matched": true
+    },
+    "aizen-hogyoku-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1086-qR9218BjZTC0.png",
+      "anilistId": 1086,
+      "anilistName": "Sousuke Aizen",
+      "search": "Sousuke Aizen",
+      "matched": true
+    },
+    "yhwach-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b68537-1bRB5OdseCp0.jpg",
+      "anilistId": 68537,
+      "anilistName": "Yhwach",
+      "search": "Yhwach",
+      "matched": true
+    },
+    "saitama-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b73935-ON5d0mAcrItd.jpg",
+      "anilistId": 73935,
+      "anilistName": "Saitama",
+      "search": "Saitama",
+      "matched": true
+    },
+    "garou-cosmique-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89277-xBGb4B5YISXg.png",
+      "anilistId": 89277,
+      "anilistName": "Garou",
+      "search": "Garou",
+      "matched": true
+    },
+    "rimuru-tempest-seigneur-demon-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123962-eL9yGV0NLMF7.png",
+      "anilistId": 123962,
+      "anilistName": "Rimuru Tempest",
+      "search": "Rimuru Tempest",
+      "matched": true
+    },
+    "sung-jin-woo-monarque-des-ombres-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b294852-9soO95KHhQ4l.png",
+      "anilistId": 294852,
+      "anilistName": "Woo-Sung Jin",
+      "search": "Sung Jin-Woo",
+      "matched": true
+    },
+    "anos-voldigoad-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b138595-Z6j0gP9s7avX.png",
+      "anilistId": 138595,
+      "anilistName": "Anos Voldigoad",
+      "search": "Anos Voldigoad",
+      "matched": true
+    },
+    "giorno-giovanna-gold-experience-requiem-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b10529-AloL8jjZwjsg.png",
+      "anilistId": 10529,
+      "anilistName": "Giorno Giovanna",
+      "search": "Giorno Giovanna",
+      "matched": true
+    },
+    "simon-super-tengen-toppa-gurren-lagann-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2257-jnalsdnIX1vN.jpg",
+      "anilistId": 2257,
+      "anilistName": "Simon",
+      "search": "Simon",
+      "matched": true
+    },
+    "sailor-moon-forme-ultime-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2030-GQvVYPEYkXCy.jpg",
+      "anilistId": 2030,
+      "anilistName": "Usagi Tsukino",
+      "search": "Usagi Tsukino",
+      "matched": true
+    },
+    "shigeo-kageyama-legendaire": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89616-dXmdOc7L6SDi.png",
+      "anilistId": 89616,
+      "anilistName": "Shigeo Kageyama",
+      "search": "Shigeo Kageyama",
+      "matched": true
+    },
+    "zeno-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b67753-QzWNHsalPyWu.jpg",
+      "anilistId": 67753,
+      "anilistName": "Zeno",
+      "search": "Zen-Oh",
+      "matched": true
+    },
+    "le-grand-pretre-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/127217-c4K0tjHvgL8x.jpg",
+      "anilistId": 127217,
+      "anilistName": "Daishinkan",
+      "search": "Grand Priest",
+      "matched": true
+    },
+    "whis-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b76346-BNh2DE5Rh2IW.jpg",
+      "anilistId": 76346,
+      "anilistName": "Whis",
+      "search": "Whis",
+      "matched": true
+    },
+    "beerus-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b76348-pGWrznfxgPIV.png",
+      "anilistId": 76348,
+      "anilistName": "Beerus",
+      "search": "Beerus",
+      "matched": true
+    },
+    "the-truth-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/n33816-OcXhUl3PYzJo.png",
+      "anilistId": 33816,
+      "anilistName": "Shinri",
+      "search": "Truth",
+      "matched": true
+    },
+    "anti-spiral-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5115-Aph7LPvS4LvR.png",
+      "anilistId": 5115,
+      "anilistName": "Anti-Spiral",
+      "search": "Anti-Spiral",
+      "matched": true
+    },
+    "simon-forme-ultime-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2257-jnalsdnIX1vN.jpg",
+      "anilistId": 2257,
+      "anilistName": "Simon",
+      "search": "Simon",
+      "matched": true
+    },
+    "featherine-augustus-aurora-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/n36061-0Pr9tBvCqIWh.png",
+      "anilistId": 36061,
+      "anilistName": "Featherine Augustus Aurora",
+      "search": "Featherine Augustus Aurora",
+      "matched": true
+    },
+    "haruhi-suzumiya-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b251-8DTaCNkSvBQ8.png",
+      "anilistId": 251,
+      "anilistName": "Haruhi Suzumiya",
+      "search": "Haruhi Suzumiya",
+      "matched": true
+    },
+    "rimuru-tempest-forme-ultime-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123962-eL9yGV0NLMF7.png",
+      "anilistId": 123962,
+      "anilistName": "Rimuru Tempest",
+      "search": "Rimuru Tempest",
+      "matched": true
+    },
+    "anos-voldigoad-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b138595-Z6j0gP9s7avX.png",
+      "anilistId": 138595,
+      "anilistName": "Anos Voldigoad",
+      "search": "Anos Voldigoad",
+      "matched": true
+    },
+    "saitama-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b73935-ON5d0mAcrItd.jpg",
+      "anilistId": 73935,
+      "anilistName": "Saitama",
+      "search": "Saitama",
+      "matched": true
+    },
+    "goku-ultra-instinct-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/246-wsRRr6z1kii8.png",
+      "anilistId": 246,
+      "anilistName": "Gokuu Son",
+      "search": "Son Goku",
+      "matched": true
+    },
+    "sailor-cosmos-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b11901-4UDeosMfHlPU.jpg",
+      "anilistId": 11901,
+      "anilistName": "Sailor Cosmos",
+      "search": "Sailor Cosmos",
+      "matched": true
+    },
+    "madoka-kaname-deesse-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b37832-lzVj5IkUciLd.jpg",
+      "anilistId": 37832,
+      "anilistName": "Madoka Kaname",
+      "search": "Madoka Kaname",
+      "matched": true
+    },
+    "hao-asakura-roi-des-esprits-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b172-AuF01ttTXRsW.jpg",
+      "anilistId": 172,
+      "anilistName": "Hao Asakura",
+      "search": "Asakura Hao",
+      "matched": true
+    },
+    "giorno-giovanna-gold-experience-requiem-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b10529-AloL8jjZwjsg.png",
+      "anilistId": 10529,
+      "anilistName": "Giorno Giovanna",
+      "search": "Giorno Giovanna",
+      "matched": true
+    },
+    "yogiri-takatou-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b192973-GUp5Fy8sv1a6.png",
+      "anilistId": 192973,
+      "anilistName": "Yogiri Takatou",
+      "search": "Yogiri Takatou",
+      "matched": true
+    },
+    "akuto-sai-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/28714.jpg",
+      "anilistId": 28714,
+      "anilistName": "Akuto Sai",
+      "search": "Akuto Sai",
+      "matched": true
+    },
+    "wang-ling-dieu": {
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b188942-9ypZJN7MCFk2.png",
+      "anilistId": 188942,
+      "anilistName": "Ling Wang",
+      "search": "Wang Ling",
+      "matched": true
+    }
+  }
+}

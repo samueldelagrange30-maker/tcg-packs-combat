@@ -13,6 +13,7 @@ export function toBattleCard(def: CardDefinition, instanceId?: string): BattleCa
     cardId: def.id,
     nom: def.nom,
     emoji: def.emoji,
+    image: def.image || "",
     vieMax: def.vie,
     vie: def.vie,
     attaque: def.attaque,

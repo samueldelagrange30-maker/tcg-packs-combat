@@ -37,9 +37,9 @@ function applyPoisonTicks(team: BattleCard[]): { team: BattleCard[]; messages: s
 function phaseLabel(phase: CombatPhase): string {
   switch (phase) {
     case 'victoire':
-      return '🏆 Victoire';
+      return 'Victoire';
     case 'defaite':
-      return '💀 Défaite';
+      return 'Défaite';
     case 'joueur':
       return 'Ton tour';
     case 'ennemi':
@@ -119,8 +119,8 @@ export function Combat() {
     setAttackerId(null);
     setMode('attaque');
     setLog([
-      `Adversaires : ${eTeam.map((c) => `${c.emoji} ${c.nom}`).join(' · ')}.`,
-      '⚔️ Le combat commence — à toi de jouer !',
+      `Adversaires : ${eTeam.map((c) => c.nom).join(' · ')}.`,
+      'Le combat commence — à toi de jouer !',
     ]);
     setPhase('joueur');
   };
@@ -337,7 +337,7 @@ export function Combat() {
     return (
       <div className="space-y-6">
         <div>
-          <h2 className="text-2xl font-bold text-amber-300 mb-1">Combat</h2>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-amber-300 mb-1">Combat</h2>
           <p className="text-slate-400 text-sm">
             Choisis jusqu&apos;à 3 cartes ({selectedIds.length}/3). L&apos;IA composera
             une équipe de puissance similaire.
@@ -364,7 +364,7 @@ export function Combat() {
                 type="button"
                 disabled={selectedIds.length === 0}
                 onClick={startBattle}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-rose-600 text-white font-bold hover:bg-rose-500 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-lg shadow-rose-900/40"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 text-white font-bold hover:brightness-110 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-lg shadow-rose-900/40 min-h-[44px]"
               >
                 Lancer le combat ({selectedIds.length}/3)
               </button>
@@ -379,7 +379,7 @@ export function Combat() {
     <div className="space-y-4 sm:space-y-5 pb-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-amber-300">{phaseLabel(phase)}</h2>
+          <h2 className="font-display text-xl sm:text-2xl font-bold text-amber-300">{phaseLabel(phase)}</h2>
           <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
             {phaseHint(phase, mode, selectedAttacker)}
           </p>
@@ -401,8 +401,7 @@ export function Combat() {
               : 'border-rose-400/40 bg-rose-950/40'
           }`}
         >
-          <p className="text-4xl mb-2">{phase === 'victoire' ? '🏆' : '💀'}</p>
-          <h3 className="text-xl font-bold text-white mb-1">
+          <h3 className="font-display text-2xl font-bold text-white mb-1">
             {phase === 'victoire' ? 'Victoire !' : 'Défaite…'}
           </h3>
           <p className="text-sm text-slate-300 mb-4">
@@ -414,7 +413,7 @@ export function Combat() {
             <button
               type="button"
               onClick={resetToSelection}
-              className="px-6 py-3 rounded-xl bg-amber-500 text-purple-950 font-bold hover:bg-amber-400 transition"
+              className="btn-gold px-6 py-3 rounded-xl transition min-h-[44px]"
             >
               Rejouer
             </button>
@@ -423,12 +422,12 @@ export function Combat() {
       )}
 
       <div
-        className={`rounded-xl border p-3 sm:p-4 transition-opacity ${
-          phase === 'ennemi' ? 'border-rose-500/40 bg-rose-950/20' : 'border-white/10 bg-white/[0.03]'
+        className={`rounded-2xl border p-3 sm:p-5 transition-all battlefield ${
+          phase === 'ennemi' ? 'border-rose-500/50 shadow-[0_0_30px_rgba(244,63,94,0.15)]' : 'border-white/10'
         }`}
       >
-        <div className="flex items-center justify-between mb-2 gap-2">
-          <h3 className="text-sm font-semibold text-rose-300">Équipe ennemie</h3>
+        <div className="flex items-center justify-between mb-3 gap-2">
+          <h3 className="text-sm font-display font-semibold text-rose-300 tracking-wide uppercase">Équipe ennemie</h3>
           {phase === 'ennemi' && (
             <span className="text-[10px] uppercase tracking-wide text-rose-200/80 animate-pulse">
               Action en cours…
@@ -453,7 +452,7 @@ export function Combat() {
               }
               className={
                 enemyTargetable && card.vie > 0
-                  ? 'ring-2 ring-rose-400/70 animate-pulse-soft'
+                  ? 'ring-4 ring-rose-400/80 animate-pulse-soft'
                   : ''
               }
             />
@@ -462,11 +461,11 @@ export function Combat() {
       </div>
 
       <div
-        className={`rounded-xl border p-3 sm:p-4 ${
-          phase === 'joueur' ? 'border-sky-500/40 bg-sky-950/20' : 'border-white/10 bg-white/[0.03]'
+        className={`rounded-2xl border p-3 sm:p-5 battlefield ${
+          phase === 'joueur' ? 'border-sky-500/50 shadow-[0_0_30px_rgba(56,189,248,0.12)]' : 'border-white/10'
         }`}
       >
-        <h3 className="text-sm font-semibold text-sky-300 mb-2">Ton équipe</h3>
+        <h3 className="text-sm font-display font-semibold text-sky-300 mb-3 tracking-wide uppercase">Ton équipe</h3>
         <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
           {playerTeam.map((card) => {
             const canPick =
@@ -491,7 +490,7 @@ export function Combat() {
       </div>
 
       {phase === 'joueur' && (
-        <div className="rounded-xl border border-white/10 bg-black/25 p-3 space-y-2">
+        <div className="rounded-2xl panel-glass p-3 sm:p-4 space-y-2">
           <div className="flex flex-wrap gap-2 items-center justify-center">
             <button
               type="button"
@@ -506,7 +505,7 @@ export function Combat() {
                   : 'border-white/20 text-slate-400'
               }`}
             >
-              ⚔️ Attaquer
+              Attaquer
             </button>
             <button
               type="button"
@@ -521,7 +520,7 @@ export function Combat() {
                   : 'border-white/20 text-slate-400'
               }`}
             >
-              ✨ Effet spécial
+              Effet spécial
             </button>
             {attackerId && (
               <button
@@ -541,8 +540,8 @@ export function Combat() {
         </div>
       )}
 
-      <div className="rounded-xl border border-white/10 bg-black/30 p-3 max-h-44 sm:max-h-52 overflow-y-auto">
-        <h3 className="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide sticky top-0 bg-black/80 backdrop-blur-sm py-1">
+      <div className="rounded-2xl panel-glass p-3 max-h-48 sm:max-h-56 overflow-y-auto">
+        <h3 className="text-xs font-display font-semibold text-amber-200/80 mb-2 uppercase tracking-wider sticky top-0 bg-[#05080f]/90 backdrop-blur-sm py-1">
           Journal de combat
         </h3>
         <ul className="space-y-1 text-sm text-slate-300">

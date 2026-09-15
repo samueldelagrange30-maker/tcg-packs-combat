@@ -14,6 +14,8 @@ export interface CardDefinition {
   nom: string;
   serie: string;
   emoji: string;
+  /** AniList portrait URL, or empty string for generated fallback */
+  image: string;
   vie: number;
   attaque: number;
   effet: EffectType;
@@ -32,6 +34,7 @@ export interface BattleCard {
   cardId: string;
   nom: string;
   emoji: string;
+  image: string;
   vieMax: number;
   vie: number;
   attaque: number;
