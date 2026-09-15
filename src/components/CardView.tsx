@@ -48,7 +48,9 @@ export function CardView({
     setSrc(resolveCardImage(imageField, card.nom, rarete));
   }, [imageField, card.nom, rarete]);
 
-  const w = compact ? 'w-[7.5rem] sm:w-36' : 'w-44 sm:w-52';
+  const size = compact
+    ? 'w-[7.5rem] sm:w-36 h-[15.5rem] sm:h-[17.5rem]'
+    : 'w-44 sm:w-52 h-[26.5rem] sm:h-[28.5rem]';
 
   return (
     <button
@@ -58,16 +60,20 @@ export function CardView({
       className={`
         group relative text-left overflow-hidden rounded-xl border-2
         transition-all duration-300 shadow-xl card-frame bg-slate-950/90
+        flex flex-col shrink-0
         ${RARITY_COLORS[rarete]} ${RARITY_GLOW[rarete]}
         ${selected ? 'ring-4 ring-amber-300/90 scale-[1.04] selected-ring' : ''}
         ${dead ? 'opacity-40 grayscale' : ''}
         ${onClick && !disabled ? 'cursor-pointer hover:scale-[1.02] hover:brightness-110' : 'cursor-default'}
-        ${w}
+        ${size}
         ${className}
       `}
     >
-      {/* Cover fills the frame; object-top keeps faces in view on tall portraits */}
-      <div className="relative w-full aspect-[3/4] overflow-hidden bg-black">
+      <div
+        className={`relative w-full shrink-0 overflow-hidden bg-black ${
+          compact ? 'h-[8.25rem] sm:h-[9.5rem]' : 'h-[14.5rem] sm:h-[15.5rem]'
+        }`}
+      >
         <img
           src={src}
           alt=""
@@ -85,22 +91,34 @@ export function CardView({
         ) : null}
       </div>
 
-      <div className={`relative px-2.5 pb-2.5 pt-2 ${compact ? 'px-2 pb-2 pt-1.5' : ''}`}>
+      <div
+        className={`relative flex-1 min-h-0 flex flex-col ${
+          compact ? 'px-2 py-1.5 gap-0.5' : 'px-2.5 py-2 gap-1'
+        }`}
+      >
         <h3
-          className={`font-display font-bold text-white leading-tight drop-shadow-md line-clamp-2 ${
-            compact ? 'text-[11px]' : 'text-sm sm:text-base'
+          className={`font-display font-bold text-white leading-tight drop-shadow-md line-clamp-2 shrink-0 ${
+            compact ? 'text-[11px] h-7' : 'text-sm sm:text-base h-10'
           }`}
+          title={card.nom}
         >
           {card.nom}
         </h3>
-        {serie && !compact && (
-          <p className="text-[10px] text-amber-200/70 mb-1.5 truncate font-medium tracking-wide">
-            {serie}
+
+        {!compact && (
+          <p
+            className="text-[10px] text-amber-200/70 truncate font-medium tracking-wide h-4 shrink-0"
+            title={serie || undefined}
+          >
+            {serie || '\u00A0'}
           </p>
         )}
-        {(!serie || compact) && <div className="mb-1" />}
 
-        <div className={`space-y-1 text-white/95 ${compact ? 'text-[10px]' : 'text-xs sm:text-sm'}`}>
+        <div
+          className={`space-y-0.5 text-white/95 shrink-0 ${
+            compact ? 'text-[10px]' : 'text-xs sm:text-sm'
+          }`}
+        >
           <div className="flex justify-between items-center gap-1">
             <span className="text-rose-200/90">Vie</span>
             <span className="font-semibold tabular-nums text-rose-300">
@@ -119,31 +137,36 @@ export function CardView({
             <span className="text-sky-200/90">Attaque</span>
             <span className="font-semibold tabular-nums text-sky-300">{attaque}</span>
           </div>
-          {!compact && (
-            <p className="text-white/75 text-[10px] sm:text-[11px] mt-1.5 border-t border-white/15 pt-1.5 leading-snug">
-              {card.effetDescription}
-            </p>
-          )}
-          {isBattle(card) && (
-            <div className="flex flex-wrap gap-1 mt-1">
-              {card.bouclier > 0 && (
-                <span className="text-[9px] bg-sky-600/80 px-1 rounded">Bouclier {card.bouclier}</span>
-              )}
-              {card.poisonTours > 0 && (
-                <span className="text-[9px] bg-lime-700/80 px-1 rounded">Poison {card.poisonTours}</span>
-              )}
-              {card.rageActif && (
-                <span className="text-[9px] bg-orange-600/80 px-1 rounded">Rage</span>
-              )}
-              {card.etourdi && (
-                <span className="text-[9px] bg-yellow-600/80 px-1 rounded">Étourdi</span>
-              )}
-              {!card.effetUtilise && card.effet !== 'aucun' && card.vie > 0 && (
-                <span className="text-[9px] bg-fuchsia-700/80 px-1 rounded">Effet dispo</span>
-              )}
-            </div>
-          )}
         </div>
+
+        {!compact && (
+          <p
+            className="text-white/75 text-[10px] sm:text-[11px] border-t border-white/15 pt-1.5 leading-snug line-clamp-2 h-9 shrink-0"
+            title={card.effetDescription}
+          >
+            {card.effetDescription}
+          </p>
+        )}
+
+        {isBattle(card) && (
+          <div className="flex flex-wrap gap-1 mt-auto min-h-[1.1rem] content-start">
+            {card.bouclier > 0 && (
+              <span className="text-[9px] bg-sky-600/80 px-1 rounded">Bouclier {card.bouclier}</span>
+            )}
+            {card.poisonTours > 0 && (
+              <span className="text-[9px] bg-lime-700/80 px-1 rounded">Poison {card.poisonTours}</span>
+            )}
+            {card.rageActif && (
+              <span className="text-[9px] bg-orange-600/80 px-1 rounded">Rage</span>
+            )}
+            {card.etourdi && (
+              <span className="text-[9px] bg-yellow-600/80 px-1 rounded">Étourdi</span>
+            )}
+            {!card.effetUtilise && card.effet !== 'aucun' && card.vie > 0 && (
+              <span className="text-[9px] bg-fuchsia-700/80 px-1 rounded">Effet dispo</span>
+            )}
+          </div>
+        )}
       </div>
     </button>
   );

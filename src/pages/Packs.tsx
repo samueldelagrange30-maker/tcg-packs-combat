@@ -193,7 +193,7 @@ export function Packs() {
                   </div>
                 </div>
                 <div className="card-flip-face card-flip-front">
-                  <CardView card={current} className="!w-48 sm:!w-56" />
+                  <CardView card={current} className="!w-48 sm:!w-56 !h-[27rem] sm:!h-[29rem]" />
                 </div>
               </div>
             </div>
