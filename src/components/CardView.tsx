@@ -48,8 +48,7 @@ export function CardView({
     setSrc(resolveCardImage(imageField, card.nom, rarete));
   }, [imageField, card.nom, rarete]);
 
-  const w = compact ? 'w-[7.25rem] sm:w-32' : 'w-40 sm:w-48';
-  const artH = compact ? 'h-24 sm:h-28' : 'h-44 sm:h-52';
+  const w = compact ? 'w-[7.5rem] sm:w-36' : 'w-44 sm:w-52';
 
   return (
     <button
@@ -58,34 +57,39 @@ export function CardView({
       onClick={onClick}
       className={`
         group relative text-left overflow-hidden rounded-xl border-2
-        transition-all duration-300 shadow-xl card-frame
+        transition-all duration-300 shadow-xl card-frame bg-slate-950/90
         ${RARITY_COLORS[rarete]} ${RARITY_GLOW[rarete]}
         ${selected ? 'ring-4 ring-amber-300/90 scale-[1.04] selected-ring' : ''}
         ${dead ? 'opacity-40 grayscale' : ''}
-        ${onClick && !disabled ? 'cursor-pointer hover:scale-[1.03] hover:brightness-110' : 'cursor-default'}
+        ${onClick && !disabled ? 'cursor-pointer hover:scale-[1.02] hover:brightness-110' : 'cursor-default'}
         ${w}
         ${className}
       `}
     >
-      <div className={`relative ${artH} overflow-hidden bg-black/40`}>
+      {/* Portrait zone: taller 3/4 frame, contain so heads aren't clipped */}
+      <div
+        className={`relative w-full overflow-hidden bg-gradient-to-b from-slate-900 to-black ${
+          compact ? 'aspect-[3/4]' : 'aspect-[3/4]'
+        }`}
+      >
         <img
           src={src}
           alt=""
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-contain object-top origin-top transition-transform duration-500 group-hover:scale-[1.03]"
           onError={() => setSrc(fallback)}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent pointer-events-none" />
-        <span className="absolute top-1.5 right-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-white/95 bg-black/55 backdrop-blur-sm px-1.5 py-0.5 rounded border border-white/15">
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+        <span className="absolute top-1.5 right-1.5 z-10 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-white/95 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded border border-white/15">
           {RARITY_LABELS[rarete]}
         </span>
         {rarete === 'dieu' || rarete === 'legendaire' || rarete === 'ultra_rare' ? (
-          <div className="pointer-events-none absolute inset-0 foil-shimmer opacity-40" />
+          <div className="pointer-events-none absolute inset-0 foil-shimmer opacity-35" />
         ) : null}
       </div>
 
-      <div className={`relative -mt-6 px-2.5 pb-2.5 pt-1 ${compact ? 'px-2 pb-2' : ''}`}>
+      <div className={`relative px-2.5 pb-2.5 pt-2 ${compact ? 'px-2 pb-2 pt-1.5' : ''}`}>
         <h3
           className={`font-display font-bold text-white leading-tight drop-shadow-md line-clamp-2 ${
             compact ? 'text-[11px]' : 'text-sm sm:text-base'
@@ -103,7 +107,7 @@ export function CardView({
         <div className={`space-y-1 text-white/95 ${compact ? 'text-[10px]' : 'text-xs sm:text-sm'}`}>
           <div className="flex justify-between items-center gap-1">
             <span className="text-rose-200/90">Vie</span>
-            <span className="font-semibold tabular-nums">
+            <span className="font-semibold tabular-nums text-rose-300">
               {showHp && isBattle(card) ? `${vie}/${vieMax}` : vieMax}
             </span>
           </div>
@@ -117,7 +121,7 @@ export function CardView({
           )}
           <div className="flex justify-between items-center gap-1">
             <span className="text-sky-200/90">Attaque</span>
-            <span className="font-semibold tabular-nums">{attaque}</span>
+            <span className="font-semibold tabular-nums text-sky-300">{attaque}</span>
           </div>
           {!compact && (
             <p className="text-white/75 text-[10px] sm:text-[11px] mt-1.5 border-t border-white/15 pt-1.5 leading-snug">

@@ -75,7 +75,7 @@ export function Home() {
                 <img
                   src={resolveCardImage(card.image, card.nom, card.rarete)}
                   alt=""
-                  className="h-40 sm:h-52 w-full object-cover object-top"
+                  className="aspect-[3/4] h-auto w-full object-contain object-top bg-black"
                   loading="lazy"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-2">
