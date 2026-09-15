@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { CollectionProvider } from './hooks/useCollection';
 import { Catalogue } from './pages/Catalogue';
@@ -10,7 +10,7 @@ import { Packs } from './pages/Packs';
 export default function App() {
   return (
     <CollectionProvider>
-      <BrowserRouter basename="/tcg-packs-combat">
+      <HashRouter>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
@@ -21,7 +21,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </CollectionProvider>
   );
 }
