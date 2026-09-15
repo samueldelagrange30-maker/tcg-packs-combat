@@ -3,7 +3,7 @@ import { CardView } from '../components/CardView';
 import { RARITY_LABELS, RARITY_ORDER, RARITY_WEIGHTS } from '../data/cards';
 import { useCollection } from '../hooks/useCollection';
 import type { CardDefinition, Rarity } from '../types';
-import { openPack } from '../utils/packs';
+import { openPackByKind, type PackKind } from '../utils/packs';
 
 type Phase = 'idle' | 'opening' | 'revealed';
 
@@ -39,8 +39,8 @@ export function Packs() {
   const [shake, setShake] = useState(false);
   const [burstIndex, setBurstIndex] = useState<number | null>(null);
 
-  const startOpen = () => {
-    const pack = openPack(5);
+  const startOpen = (kind: PackKind = 'standard') => {
+    const pack = openPackByKind(kind, 5);
     setCards(pack);
     setRevealedCount(0);
     setBurstIndex(null);
@@ -91,23 +91,46 @@ export function Packs() {
 
       {phase === 'idle' && (
         <div className="flex flex-col items-center gap-6 py-8 sm:py-12">
-          <button
-            type="button"
-            onClick={startOpen}
-            className="group relative w-44 h-64 sm:w-52 sm:h-72 rounded-2xl border-2 border-amber-400/50 bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 shadow-2xl shadow-amber-500/25 hover:scale-105 active:scale-95 transition-transform touch-manipulation overflow-hidden"
-          >
-            <div className="absolute inset-0 foil-shimmer opacity-50" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10">
-              <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/40 group-hover:scale-110 transition">
-                <span className="font-display text-2xl text-black font-bold">P</span>
+          <div className="flex flex-wrap justify-center gap-5 sm:gap-8">
+            <button
+              type="button"
+              onClick={() => startOpen('standard')}
+              className="group relative w-44 h-64 sm:w-52 sm:h-72 rounded-2xl border-2 border-amber-400/50 bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 shadow-2xl shadow-amber-500/25 hover:scale-105 active:scale-95 transition-transform touch-manipulation overflow-hidden"
+            >
+              <div className="absolute inset-0 foil-shimmer opacity-50" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10">
+                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/40 group-hover:scale-110 transition">
+                  <span className="font-display text-2xl text-black font-bold">P</span>
+                </div>
+                <span className="font-display font-bold text-amber-300 text-lg">Pack Anime</span>
+                <span className="text-xs text-slate-400 tracking-widest uppercase">5 cartes</span>
               </div>
-              <span className="font-display font-bold text-amber-300 text-lg">Pack Anime</span>
-              <span className="text-xs text-slate-400 tracking-widest uppercase">5 cartes</span>
-            </div>
-            <div className="absolute inset-0 rounded-2xl ring-2 ring-amber-400/20 animate-pulse pointer-events-none" />
-          </button>
+              <div className="absolute inset-0 rounded-2xl ring-2 ring-amber-400/20 animate-pulse pointer-events-none" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => startOpen('admin_legendaire')}
+              className="group relative w-44 h-64 sm:w-52 sm:h-72 rounded-2xl border-2 border-rose-400/60 bg-gradient-to-br from-rose-950 via-red-950 to-slate-950 shadow-2xl shadow-rose-500/30 hover:scale-105 active:scale-95 transition-transform touch-manipulation overflow-hidden"
+            >
+              <div className="absolute inset-0 foil-shimmer opacity-60" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10 px-3">
+                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-rose-300 to-rose-700 flex items-center justify-center shadow-lg shadow-rose-500/40 group-hover:scale-110 transition">
+                  <span className="font-display text-xl text-black font-bold">A</span>
+                </div>
+                <span className="font-display font-bold text-rose-300 text-lg text-center leading-tight">
+                  Pack Admin
+                </span>
+                <span className="text-xs text-rose-200/80 tracking-wide uppercase text-center">
+                  100% légendaire
+                </span>
+                <span className="text-[10px] text-slate-400 tracking-widest uppercase">5 cartes</span>
+              </div>
+              <div className="absolute inset-0 rounded-2xl ring-2 ring-rose-400/25 animate-pulse pointer-events-none" />
+            </button>
+          </div>
           <p className="text-slate-400 text-sm text-center px-4">
-            Appuie sur le pack pour l&apos;ouvrir
+            Choisis un pack pour l&apos;ouvrir
           </p>
         </div>
       )}
@@ -197,7 +220,10 @@ export function Packs() {
       )}
 
       <div className="rounded-2xl panel-glass p-4 text-sm text-slate-400">
-        <p className="font-display font-semibold text-amber-200/90 mb-2">Probabilités</p>
+        <p className="font-display font-semibold text-amber-200/90 mb-2">Probabilités — Pack Anime</p>
+        <p className="text-xs text-rose-300/90 mb-3">
+          Pack Admin : <strong>100&nbsp;% légendaire</strong> (outil de test).
+        </p>
         <ul className="grid sm:grid-cols-2 gap-1.5">
           {[...RARITY_ORDER].reverse().map((r) => (
             <li key={r} className="flex justify-between gap-2 border-b border-white/5 pb-1">
