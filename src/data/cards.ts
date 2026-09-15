@@ -1,7 +1,7 @@
 import type { CardDefinition, Rarity } from '../types';
 
 export const CATALOGUE: CardDefinition[] = [
-  {
+{
     id: 'sakura-haruno-commun',
     nom: 'Sakura Haruno',
     serie: 'Naruto',
@@ -14,7 +14,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 8 points de vie.',
     rarete: 'commun',
   },
-  {
+{
     id: 'usopp-commun',
     nom: 'Usopp',
     serie: 'One Piece',
@@ -27,7 +27,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'konohamaru-commun',
     nom: 'Konohamaru',
     serie: 'Naruto',
@@ -40,7 +40,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'zenitsu-agatsuma-commun',
     nom: 'Zenitsu Agatsuma',
     serie: 'Demon Slayer',
@@ -53,7 +53,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'commun',
   },
-  {
+{
     id: 'krillin-commun',
     nom: 'Krillin',
     serie: 'Dragon Ball',
@@ -66,7 +66,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'yamcha-commun',
     nom: 'Yamcha',
     serie: 'Dragon Ball',
@@ -79,7 +79,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'mumen-rider-commun',
     nom: 'Mumen Rider',
     serie: 'One Punch Man',
@@ -92,7 +92,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Bouclier : absorbe 6 dégâts la prochaine fois.',
     rarete: 'commun',
   },
-  {
+{
     id: 'koby-commun',
     nom: 'Koby',
     serie: 'One Piece',
@@ -105,7 +105,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'armin-arlert-commun',
     nom: 'Armin Arlert',
     serie: 'L\'Attaque des Titans',
@@ -118,7 +118,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'kazuha-commun',
     nom: 'Kazuha',
     serie: 'My Hero Academia',
@@ -131,7 +131,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'chopper-commun',
     nom: 'Chopper',
     serie: 'One Piece',
@@ -144,7 +144,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 8 points de vie.',
     rarete: 'commun',
   },
-  {
+{
     id: 'hinata-hyuga-commun',
     nom: 'Hinata Hyuga',
     serie: 'Naruto',
@@ -157,7 +157,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'nobara-kugisaki-commun',
     nom: 'Nobara Kugisaki',
     serie: 'Jujutsu Kaisen',
@@ -170,7 +170,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'orihime-inoue-commun',
     nom: 'Orihime Inoue',
     serie: 'Bleach',
@@ -183,7 +183,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 8 points de vie.',
     rarete: 'commun',
   },
-  {
+{
     id: 'sokka-commun',
     nom: 'Sokka',
     serie: 'Avatar',
@@ -196,7 +196,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'commun',
   },
-  {
+{
     id: 'rock-lee-peu-commun',
     nom: 'Rock Lee',
     serie: 'Naruto',
@@ -209,7 +209,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'neji-hyuga-peu-commun',
     nom: 'Neji Hyuga',
     serie: 'Naruto',
@@ -222,7 +222,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'inosuke-hashibira-peu-commun',
     nom: 'Inosuke Hashibira',
     serie: 'Demon Slayer',
@@ -235,7 +235,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'tanjiro-kamado-peu-commun',
     nom: 'Tanjiro Kamado',
     serie: 'Demon Slayer',
@@ -248,7 +248,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'mikasa-ackerman-peu-commun',
     nom: 'Mikasa Ackerman',
     serie: 'L\'Attaque des Titans',
@@ -261,7 +261,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'eren-yeager-peu-commun',
     nom: 'Eren Yeager',
     serie: 'L\'Attaque des Titans',
@@ -274,7 +274,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'shikamaru-nara-peu-commun',
     nom: 'Shikamaru Nara',
     serie: 'Naruto',
@@ -287,7 +287,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'franky-peu-commun',
     nom: 'Franky',
     serie: 'One Piece',
@@ -300,7 +300,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Bouclier : absorbe 9 dégâts la prochaine fois.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'brook-peu-commun',
     nom: 'Brook',
     serie: 'One Piece',
@@ -313,7 +313,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'tengen-uzui-peu-commun',
     nom: 'Tengen Uzui',
     serie: 'Demon Slayer',
@@ -326,7 +326,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'megumi-fushiguro-peu-commun',
     nom: 'Megumi Fushiguro',
     serie: 'Jujutsu Kaisen',
@@ -339,7 +339,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'maki-zenin-peu-commun',
     nom: 'Maki Zenin',
     serie: 'Jujutsu Kaisen',
@@ -352,7 +352,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'asta-peu-commun',
     nom: 'Asta',
     serie: 'Black Clover',
@@ -365,7 +365,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'yuno-peu-commun',
     nom: 'Yuno',
     serie: 'Black Clover',
@@ -378,7 +378,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'killua-zoldyck-peu-commun',
     nom: 'Killua Zoldyck',
     serie: 'Hunter x Hunter',
@@ -391,7 +391,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'peu_commun',
   },
-  {
+{
     id: 'kakashi-hatake-rare',
     nom: 'Kakashi Hatake',
     serie: 'Naruto',
@@ -404,7 +404,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'gaara-rare',
     nom: 'Gaara',
     serie: 'Naruto',
@@ -417,7 +417,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Bouclier : absorbe 12 dégâts la prochaine fois.',
     rarete: 'rare',
   },
-  {
+{
     id: 'jiraiya-rare',
     nom: 'Jiraiya',
     serie: 'Naruto',
@@ -430,7 +430,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'trafalgar-law-rare',
     nom: 'Trafalgar Law',
     serie: 'One Piece',
@@ -443,7 +443,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 10 PV à la cible.',
     rarete: 'rare',
   },
-  {
+{
     id: 'sanji-rare',
     nom: 'Sanji',
     serie: 'One Piece',
@@ -456,7 +456,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'roronoa-zoro-rare',
     nom: 'Roronoa Zoro',
     serie: 'One Piece',
@@ -469,7 +469,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'rare',
   },
-  {
+{
     id: 'portgas-d-ace-rare',
     nom: 'Portgas D. Ace',
     serie: 'One Piece',
@@ -482,7 +482,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'doflamingo-rare',
     nom: 'Doflamingo',
     serie: 'One Piece',
@@ -495,7 +495,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'rare',
   },
-  {
+{
     id: 'hisoka-rare',
     nom: 'Hisoka',
     serie: 'Hunter x Hunter',
@@ -508,7 +508,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'chrollo-lucilfer-rare',
     nom: 'Chrollo Lucilfer',
     serie: 'Hunter x Hunter',
@@ -521,7 +521,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 10 PV à la cible.',
     rarete: 'rare',
   },
-  {
+{
     id: 'akaza-rare',
     nom: 'Akaza',
     serie: 'Demon Slayer',
@@ -534,7 +534,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'rare',
   },
-  {
+{
     id: 'giyu-tomioka-rare',
     nom: 'Giyu Tomioka',
     serie: 'Demon Slayer',
@@ -547,7 +547,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'shoto-todoroki-rare',
     nom: 'Shoto Todoroki',
     serie: 'My Hero Academia',
@@ -560,7 +560,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'katsuki-bakugo-rare',
     nom: 'Katsuki Bakugo',
     serie: 'My Hero Academia',
@@ -573,7 +573,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'rare',
   },
-  {
+{
     id: 'eijiro-kirishima-rare',
     nom: 'Eijiro Kirishima',
     serie: 'My Hero Academia',
@@ -586,7 +586,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Bouclier : absorbe 12 dégâts la prochaine fois.',
     rarete: 'rare',
   },
-  {
+{
     id: 'levi-ackerman-rare',
     nom: 'Levi Ackerman',
     serie: 'L\'Attaque des Titans',
@@ -599,7 +599,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'yami-sukehiro-rare',
     nom: 'Yami Sukehiro',
     serie: 'Black Clover',
@@ -612,7 +612,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'rare',
   },
-  {
+{
     id: 'mereoleona-vermillion-rare',
     nom: 'Mereoleona Vermillion',
     serie: 'Black Clover',
@@ -625,7 +625,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'rare',
   },
-  {
+{
     id: 'eren-titan-originel-rare',
     nom: 'Eren Titan Originel',
     serie: 'L\'Attaque des Titans',
@@ -638,7 +638,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'rare',
   },
-  {
+{
     id: 'denji-rare',
     nom: 'Denji',
     serie: 'Chainsaw Man',
@@ -651,7 +651,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'rare',
   },
-  {
+{
     id: 'naruto-uzumaki-mode-ermite-super-rare',
     nom: 'Naruto Uzumaki — Mode Ermite',
     serie: 'Naruto',
@@ -664,7 +664,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'sasuke-uchiha-rinnegan-super-rare',
     nom: 'Sasuke Uchiha — Rinnegan',
     serie: 'Naruto',
@@ -677,7 +677,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'madara-uchiha-super-rare',
     nom: 'Madara Uchiha',
     serie: 'Naruto',
@@ -690,7 +690,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'itachi-uchiha-super-rare',
     nom: 'Itachi Uchiha',
     serie: 'Naruto',
@@ -703,7 +703,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'obito-uchiha-super-rare',
     nom: 'Obito Uchiha',
     serie: 'Naruto',
@@ -716,7 +716,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'monkey-d-luffy-gear-5-super-rare',
     nom: 'Monkey D. Luffy — Gear 5',
     serie: 'One Piece',
@@ -729,7 +729,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'roronoa-zoro-roi-de-l-enfer-super-rare',
     nom: 'Roronoa Zoro — Roi de l\'Enfer',
     serie: 'One Piece',
@@ -742,20 +742,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'super_rare',
   },
-  {
-    id: 'shanks-super-rare',
-    nom: 'Shanks',
-    serie: 'One Piece',
-    emoji: '🍷',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b727-wUJx7M1z5xON.png',
-    vie: 50,
-    attaque: 19,
-    effet: 'stun',
-    effetValeur: 1,
-    effetDescription: 'Stun : étourdit la cible pour 1 tour.',
-    rarete: 'super_rare',
-  },
-  {
+{
     id: 'marshall-d-teach-barbe-noire-super-rare',
     nom: 'Marshall D. Teach — Barbe Noire',
     serie: 'One Piece',
@@ -768,7 +755,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 13 PV à la cible.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'yamato-super-rare',
     nom: 'Yamato',
     serie: 'One Piece',
@@ -781,7 +768,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'ichigo-kurosaki-super-rare',
     nom: 'Ichigo Kurosaki',
     serie: 'Bleach',
@@ -794,7 +781,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'kenpachi-zaraki-super-rare',
     nom: 'Kenpachi Zaraki',
     serie: 'Bleach',
@@ -807,7 +794,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'byakuya-kuchiki-super-rare',
     nom: 'Byakuya Kuchiki',
     serie: 'Bleach',
@@ -820,7 +807,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'toshiro-hitsugaya-super-rare',
     nom: 'Toshiro Hitsugaya',
     serie: 'Bleach',
@@ -833,7 +820,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'yusuke-urameshi-super-rare',
     nom: 'Yusuke Urameshi',
     serie: 'Yu Yu Hakusho',
@@ -846,7 +833,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'hiei-super-rare',
     nom: 'Hiei',
     serie: 'Yu Yu Hakusho',
@@ -859,7 +846,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'gon-freecss-adulte-super-rare',
     nom: 'Gon Freecss — Adulte',
     serie: 'Hunter x Hunter',
@@ -872,7 +859,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'meruem-super-rare',
     nom: 'Meruem',
     serie: 'Hunter x Hunter',
@@ -885,7 +872,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 13 PV à la cible.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'satoru-gojo-super-rare',
     nom: 'Satoru Gojo',
     serie: 'Jujutsu Kaisen',
@@ -898,7 +885,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'ryomen-sukuna-super-rare',
     nom: 'Ryomen Sukuna',
     serie: 'Jujutsu Kaisen',
@@ -911,7 +898,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 13 PV à la cible.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'yuta-okkotsu-super-rare',
     nom: 'Yuta Okkotsu',
     serie: 'Jujutsu Kaisen',
@@ -924,7 +911,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'toji-fushiguro-super-rare',
     nom: 'Toji Fushiguro',
     serie: 'Jujutsu Kaisen',
@@ -937,7 +924,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'muzan-kibutsuji-super-rare',
     nom: 'Muzan Kibutsuji',
     serie: 'Demon Slayer',
@@ -950,7 +937,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Poison : inflige 6 dégâts pendant 3 tours.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'all-might-super-rare',
     nom: 'All Might',
     serie: 'My Hero Academia',
@@ -963,7 +950,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'shigaraki-tomura-super-rare',
     nom: 'Shigaraki Tomura',
     serie: 'My Hero Academia',
@@ -976,7 +963,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Poison : inflige 6 dégâts pendant 3 tours.',
     rarete: 'super_rare',
   },
-  {
+{
     id: 'son-goku-super-saiyan-3-ultra-rare',
     nom: 'Son Goku — Super Saiyan 3',
     serie: 'Dragon Ball',
@@ -989,7 +976,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'son-goku-ultra-instinct-ultra-rare',
     nom: 'Son Goku — Ultra Instinct',
     serie: 'Dragon Ball',
@@ -1002,20 +989,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'ultra_rare',
   },
-  {
-    id: 'vegeta-ultra-ego-ultra-rare',
-    nom: 'Vegeta — Ultra Ego',
-    serie: 'Dragon Ball',
-    emoji: '💜',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b913-NIFkKazWM8VO.png',
-    vie: 62,
-    attaque: 24,
-    effet: 'rage',
-    effetValeur: 2,
-    effetDescription: 'Rage : double l\'attaque au prochain coup.',
-    rarete: 'ultra_rare',
-  },
-  {
+{
     id: 'gogeta-super-saiyan-blue-ultra-rare',
     nom: 'Gogeta — Super Saiyan Blue',
     serie: 'Dragon Ball',
@@ -1028,7 +1002,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'vegito-super-saiyan-blue-ultra-rare',
     nom: 'Vegito — Super Saiyan Blue',
     serie: 'Dragon Ball',
@@ -1041,7 +1015,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'broly-full-power-ultra-rare',
     nom: 'Broly — Full Power',
     serie: 'Dragon Ball',
@@ -1054,46 +1028,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
-    id: 'beerus-ultra-rare',
-    nom: 'Beerus',
-    serie: 'Dragon Ball',
-    emoji: '🐱',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b76348-pGWrznfxgPIV.png',
-    vie: 62,
-    attaque: 24,
-    effet: 'aucun',
-    effetValeur: 0,
-    effetDescription: 'Aucun effet spécial.',
-    rarete: 'ultra_rare',
-  },
-  {
-    id: 'whis-ultra-rare',
-    nom: 'Whis',
-    serie: 'Dragon Ball',
-    emoji: '👼',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b76346-BNh2DE5Rh2IW.jpg',
-    vie: 62,
-    attaque: 24,
-    effet: 'soin',
-    effetValeur: 28,
-    effetDescription: 'Soin : restaure 28 points de vie.',
-    rarete: 'ultra_rare',
-  },
-  {
-    id: 'naruto-mode-baryon-ultra-rare',
-    nom: 'Naruto — Mode Baryon',
-    serie: 'Naruto',
-    emoji: '🦊',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b17-phjcWCkRuIhu.png',
-    vie: 62,
-    attaque: 24,
-    effet: 'rage',
-    effetValeur: 2,
-    effetDescription: 'Rage : double l\'attaque au prochain coup.',
-    rarete: 'ultra_rare',
-  },
-  {
+{
     id: 'sasuke-susanoo-parfait-ultra-rare',
     nom: 'Sasuke — Susanoo Parfait',
     serie: 'Naruto',
@@ -1106,20 +1041,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Bouclier : absorbe 20 dégâts la prochaine fois.',
     rarete: 'ultra_rare',
   },
-  {
-    id: 'kaguya-otsutsuki-ultra-rare',
-    nom: 'Kaguya Otsutsuki',
-    serie: 'Naruto',
-    emoji: '🐰',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b126069-CYxn8C4AHwiD.png',
-    vie: 62,
-    attaque: 24,
-    effet: 'stun',
-    effetValeur: 1,
-    effetDescription: 'Stun : étourdit la cible pour 1 tour.',
-    rarete: 'ultra_rare',
-  },
-  {
+{
     id: 'hashirama-senju-ultra-rare',
     nom: 'Hashirama Senju',
     serie: 'Naruto',
@@ -1132,7 +1054,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 28 points de vie.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'luffy-gear-5-ultra-rare',
     nom: 'Luffy — Gear 5',
     serie: 'One Piece',
@@ -1145,7 +1067,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'kaido-ultra-rare',
     nom: 'Kaido',
     serie: 'One Piece',
@@ -1158,7 +1080,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Bouclier : absorbe 20 dégâts la prochaine fois.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'shanks-haki-des-rois-ultra-rare',
     nom: 'Shanks — Haki des Rois',
     serie: 'One Piece',
@@ -1171,20 +1093,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'ultra_rare',
   },
-  {
-    id: 'gol-d-roger-ultra-rare',
-    nom: 'Gol D. Roger',
-    serie: 'One Piece',
-    emoji: '🏴‍☠️',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b4883-0t76xH00sehO.png',
-    vie: 62,
-    attaque: 24,
-    effet: 'aucun',
-    effetValeur: 0,
-    effetDescription: 'Aucun effet spécial.',
-    rarete: 'ultra_rare',
-  },
-  {
+{
     id: 'edward-newgate-barbe-blanche-ultra-rare',
     nom: 'Edward Newgate — Barbe Blanche',
     serie: 'One Piece',
@@ -1197,7 +1106,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'ichigo-bankai-final-ultra-rare',
     nom: 'Ichigo — Bankai final',
     serie: 'Bleach',
@@ -1210,7 +1119,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'sosuke-aizen-ultra-rare',
     nom: 'Sosuke Aizen',
     serie: 'Bleach',
@@ -1223,46 +1132,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'ultra_rare',
   },
-  {
-    id: 'yhwach-ultra-rare',
-    nom: 'Yhwach',
-    serie: 'Bleach',
-    emoji: '👁️',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b68537-1bRB5OdseCp0.jpg',
-    vie: 62,
-    attaque: 24,
-    effet: 'drain',
-    effetValeur: 16,
-    effetDescription: 'Drain : vole 16 PV à la cible.',
-    rarete: 'ultra_rare',
-  },
-  {
-    id: 'saitama-ultra-rare',
-    nom: 'Saitama',
-    serie: 'One Punch Man',
-    emoji: '😐',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b73935-ON5d0mAcrItd.jpg',
-    vie: 62,
-    attaque: 24,
-    effet: 'rage',
-    effetValeur: 2,
-    effetDescription: 'Rage : double l\'attaque au prochain coup.',
-    rarete: 'ultra_rare',
-  },
-  {
-    id: 'garou-cosmique-ultra-rare',
-    nom: 'Garou Cosmique',
-    serie: 'One Punch Man',
-    emoji: '🌌',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b89277-xBGb4B5YISXg.png',
-    vie: 62,
-    attaque: 24,
-    effet: 'rage',
-    effetValeur: 2,
-    effetDescription: 'Rage : double l\'attaque au prochain coup.',
-    rarete: 'ultra_rare',
-  },
-  {
+{
     id: 'tatsumaki-ultra-rare',
     nom: 'Tatsumaki',
     serie: 'One Punch Man',
@@ -1275,7 +1145,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'sung-jin-woo-ultra-rare',
     nom: 'Sung Jin-Woo',
     serie: 'Solo Leveling',
@@ -1288,7 +1158,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'jin-mori-ultra-rare',
     nom: 'Jin Mori',
     serie: 'The God of High School',
@@ -1301,7 +1171,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'rimuru-tempest-ultra-rare',
     nom: 'Rimuru Tempest',
     serie: 'That Time I Got Reincarnated as a Slime',
@@ -1314,7 +1184,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 16 PV à la cible.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'meliodas-ultra-rare',
     nom: 'Meliodas',
     serie: 'The Seven Deadly Sins',
@@ -1327,7 +1197,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 16 PV à la cible.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'escanor-ultra-rare',
     nom: 'Escanor',
     serie: 'The Seven Deadly Sins',
@@ -1340,7 +1210,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'arthur-pendragon-chaos-ultra-rare',
     nom: 'Arthur Pendragon — Chaos',
     serie: 'The Seven Deadly Sins',
@@ -1353,7 +1223,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'asta-union-avec-liebe-ultra-rare',
     nom: 'Asta — Union avec Liebe',
     serie: 'Black Clover',
@@ -1366,7 +1236,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'ultra_rare',
   },
-  {
+{
     id: 'son-goku-ultra-instinct-maitrise-legendaire',
     nom: 'Son Goku — Ultra Instinct maîtrisé',
     serie: 'Dragon Ball',
@@ -1379,7 +1249,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'vegeta-ultra-ego-legendaire',
     nom: 'Vegeta — Ultra Ego',
     serie: 'Dragon Ball',
@@ -1392,7 +1262,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'gogeta-legendaire',
     nom: 'Gogeta',
     serie: 'Dragon Ball',
@@ -1405,7 +1275,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'vegito-legendaire',
     nom: 'Vegito',
     serie: 'Dragon Ball',
@@ -1418,7 +1288,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'broly-legendaire',
     nom: 'Broly',
     serie: 'Dragon Ball',
@@ -1431,7 +1301,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'jiren-legendaire',
     nom: 'Jiren',
     serie: 'Dragon Ball',
@@ -1444,7 +1314,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Bouclier : absorbe 25 dégâts la prochaine fois.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'grand-pretre-legendaire',
     nom: 'Grand Prêtre',
     serie: 'Dragon Ball',
@@ -1457,7 +1327,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'naruto-mode-baryon-legendaire',
     nom: 'Naruto — Mode Baryon',
     serie: 'Naruto',
@@ -1470,7 +1340,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'sasuke-rinnegan-complet-legendaire',
     nom: 'Sasuke — Rinnegan complet',
     serie: 'Naruto',
@@ -1483,7 +1353,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'madara-jinchuriki-de-jubi-legendaire',
     nom: 'Madara — Jinchūriki de Jûbi',
     serie: 'Naruto',
@@ -1496,7 +1366,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'kaguya-otsutsuki-legendaire',
     nom: 'Kaguya Otsutsuki',
     serie: 'Naruto',
@@ -1509,7 +1379,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'luffy-gear-5-eveille-legendaire',
     nom: 'Luffy — Gear 5 éveillé',
     serie: 'One Piece',
@@ -1522,7 +1392,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'gol-d-roger-legendaire',
     nom: 'Gol D. Roger',
     serie: 'One Piece',
@@ -1535,7 +1405,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'barbe-blanche-prime-legendaire',
     nom: 'Barbe Blanche — Prime',
     serie: 'One Piece',
@@ -1548,7 +1418,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'shanks-legendaire',
     nom: 'Shanks',
     serie: 'One Piece',
@@ -1561,7 +1431,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'imu-legendaire',
     nom: 'Imu',
     serie: 'One Piece',
@@ -1574,7 +1444,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 20 PV à la cible.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'ichigo-veritable-bankai-legendaire',
     nom: 'Ichigo — Véritable Bankai',
     serie: 'Bleach',
@@ -1587,7 +1457,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'aizen-hogyoku-legendaire',
     nom: 'Aizen — Hogyoku',
     serie: 'Bleach',
@@ -1600,7 +1470,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'yhwach-legendaire',
     nom: 'Yhwach',
     serie: 'Bleach',
@@ -1613,20 +1483,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 20 PV à la cible.',
     rarete: 'legendaire',
   },
-  {
-    id: 'saitama-legendaire',
-    nom: 'Saitama',
-    serie: 'One Punch Man',
-    emoji: '😐',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b73935-ON5d0mAcrItd.jpg',
-    vie: 71,
-    attaque: 34,
-    effet: 'rage',
-    effetValeur: 2,
-    effetDescription: 'Rage : double l\'attaque au prochain coup.',
-    rarete: 'legendaire',
-  },
-  {
+{
     id: 'garou-cosmique-legendaire',
     nom: 'Garou Cosmique',
     serie: 'One Punch Man',
@@ -1639,7 +1496,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'rimuru-tempest-seigneur-demon-legendaire',
     nom: 'Rimuru Tempest — Seigneur-Démon',
     serie: 'That Time I Got Reincarnated as a Slime',
@@ -1652,7 +1509,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 20 PV à la cible.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'sung-jin-woo-monarque-des-ombres-legendaire',
     nom: 'Sung Jin-Woo — Monarque des Ombres',
     serie: 'Solo Leveling',
@@ -1665,33 +1522,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'legendaire',
   },
-  {
-    id: 'anos-voldigoad-legendaire',
-    nom: 'Anos Voldigoad',
-    serie: 'The Misfit of Demon King Academy',
-    emoji: '🩸',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b138595-Z6j0gP9s7avX.png',
-    vie: 78,
-    attaque: 31,
-    effet: 'drain',
-    effetValeur: 20,
-    effetDescription: 'Drain : vole 20 PV à la cible.',
-    rarete: 'legendaire',
-  },
-  {
-    id: 'giorno-giovanna-gold-experience-requiem-legendaire',
-    nom: 'Giorno Giovanna — Gold Experience Requiem',
-    serie: 'JoJo\'s Bizarre Adventure',
-    emoji: '🐞',
-    image: 'https://s4.anilist.co/file/anilistcdn/character/large/b10529-AloL8jjZwjsg.png',
-    vie: 78,
-    attaque: 31,
-    effet: 'stun',
-    effetValeur: 1,
-    effetDescription: 'Stun : étourdit la cible pour 1 tour.',
-    rarete: 'legendaire',
-  },
-  {
+{
     id: 'simon-super-tengen-toppa-gurren-lagann-legendaire',
     nom: 'Simon — Super Tengen Toppa Gurren Lagann',
     serie: 'Gurren Lagann',
@@ -1704,7 +1535,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'sailor-moon-forme-ultime-legendaire',
     nom: 'Sailor Moon — Forme ultime',
     serie: 'Sailor Moon',
@@ -1717,7 +1548,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 35 points de vie.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'shigeo-kageyama-legendaire',
     nom: 'Shigeo Kageyama — ???%',
     serie: 'Mob Psycho 100',
@@ -1730,7 +1561,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'legendaire',
   },
-  {
+{
     id: 'zeno-dieu',
     nom: 'Zeno',
     serie: 'Dragon Ball',
@@ -1743,7 +1574,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'le-grand-pretre-dieu',
     nom: 'Le Grand Prêtre',
     serie: 'Dragon Ball',
@@ -1756,7 +1587,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 45 points de vie.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'whis-dieu',
     nom: 'Whis',
     serie: 'Dragon Ball',
@@ -1769,7 +1600,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 45 points de vie.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'beerus-dieu',
     nom: 'Beerus',
     serie: 'Dragon Ball',
@@ -1782,7 +1613,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'the-truth-dieu',
     nom: 'The Truth',
     serie: 'Fullmetal Alchemist',
@@ -1795,7 +1626,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'anti-spiral-dieu',
     nom: 'Anti-Spiral',
     serie: 'Gurren Lagann',
@@ -1808,7 +1639,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 28 PV à la cible.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'simon-forme-ultime-dieu',
     nom: 'Simon — Forme ultime',
     serie: 'Gurren Lagann',
@@ -1821,7 +1652,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'featherine-augustus-aurora-dieu',
     nom: 'Featherine Augustus Aurora',
     serie: 'Umineko',
@@ -1834,7 +1665,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'haruhi-suzumiya-dieu',
     nom: 'Haruhi Suzumiya',
     serie: 'The Melancholy of Haruhi Suzumiya',
@@ -1847,7 +1678,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'rimuru-tempest-forme-ultime-dieu',
     nom: 'Rimuru Tempest — Forme ultime',
     serie: 'That Time I Got Reincarnated as a Slime',
@@ -1860,7 +1691,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 28 PV à la cible.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'anos-voldigoad-dieu',
     nom: 'Anos Voldigoad',
     serie: 'The Misfit of Demon King Academy',
@@ -1873,7 +1704,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 28 PV à la cible.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'saitama-dieu',
     nom: 'Saitama',
     serie: 'One Punch Man',
@@ -1886,7 +1717,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'goku-ultra-instinct-dieu',
     nom: 'Goku — Ultra Instinct',
     serie: 'Dragon Ball',
@@ -1899,7 +1730,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Rage : double l\'attaque au prochain coup.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'sailor-cosmos-dieu',
     nom: 'Sailor Cosmos',
     serie: 'Sailor Moon',
@@ -1912,7 +1743,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 45 points de vie.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'madoka-kaname-deesse-dieu',
     nom: 'Madoka Kaname — Déesse',
     serie: 'Puella Magi Madoka Magica',
@@ -1925,7 +1756,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Soin : restaure 45 points de vie.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'hao-asakura-roi-des-esprits-dieu',
     nom: 'Hao Asakura — Roi des Esprits',
     serie: 'Shaman King',
@@ -1938,7 +1769,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Aucun effet spécial.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'giorno-giovanna-gold-experience-requiem-dieu',
     nom: 'Giorno Giovanna — Gold Experience Requiem',
     serie: 'JoJo\'s Bizarre Adventure',
@@ -1951,7 +1782,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'yogiri-takatou-dieu',
     nom: 'Yogiri Takatou',
     serie: 'Instant Death',
@@ -1964,7 +1795,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Stun : étourdit la cible pour 1 tour.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'akuto-sai-dieu',
     nom: 'Akuto Sai',
     serie: 'Demon King Daimao',
@@ -1977,7 +1808,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetDescription: 'Drain : vole 28 PV à la cible.',
     rarete: 'dieu',
   },
-  {
+{
     id: 'wang-ling-dieu',
     nom: 'Wang Ling',
     serie: 'The Daily Life of the Immortal King',
@@ -1989,7 +1820,7 @@ export const CATALOGUE: CardDefinition[] = [
     effetValeur: 0,
     effetDescription: 'Aucun effet spécial.',
     rarete: 'dieu',
-  },
+  }
 ];
 
 export const STARTER_CARD_IDS = [
