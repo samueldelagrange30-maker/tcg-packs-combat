@@ -354,8 +354,9 @@ button:disabled {
   inset: 0;
   z-index: 80;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: max(1.25rem, 8vh);
   overflow: hidden;
 }
 .legend-epic-flash {
@@ -430,15 +431,16 @@ button:disabled {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 1.25rem 1.5rem;
+  padding: 0.85rem 1.35rem;
   border-radius: 1.25rem;
-  background: linear-gradient(135deg, rgba(76, 5, 25, 0.75), rgba(69, 10, 10, 0.55));
+  background: linear-gradient(135deg, rgba(76, 5, 25, 0.82), rgba(69, 10, 10, 0.62));
   border: 1px solid rgba(251, 191, 36, 0.45);
   box-shadow:
     0 0 40px rgba(244, 63, 94, 0.45),
     0 0 80px rgba(251, 191, 36, 0.25);
   backdrop-filter: blur(8px);
   animation: legend-banner-in 0.6s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  max-width: min(92vw, 28rem);
 }
 @keyframes legend-banner-in {
   0% {
