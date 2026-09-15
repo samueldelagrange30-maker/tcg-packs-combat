@@ -11,8 +11,9 @@ import { STARTER_CARD_IDS } from '../data/cards';
 import type { CardDefinition, OwnedCard } from '../types';
 import { newInstanceId } from '../utils/combat';
 
-const STORAGE_KEY = 'tcg-arcanes-collection';
-const STARTER_FLAG = 'tcg-arcanes-starter-granted';
+/** Bumped to invalidate old fantasy-card collections */
+const STORAGE_KEY = 'tcg-anime-collection-v2';
+const STARTER_FLAG = 'tcg-anime-starter-granted-v2';
 
 function loadOwned(): OwnedCard[] {
   try {

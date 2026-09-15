@@ -14,13 +14,13 @@ export function Layout() {
         <div className="max-w-5xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
             <span className="text-2xl" aria-hidden>
-              ⚔️
+              🎌
             </span>
             <div>
               <h1 className="font-bold text-base sm:text-lg text-amber-300 tracking-wide">
-                Arcanes Packs
+                Anime Packs Combat
               </h1>
-              <p className="text-[11px] text-slate-400">TCG · Packs & Combat</p>
+              <p className="text-[11px] text-slate-400">TCG fan · Packs & Combat</p>
             </div>
           </div>
           <nav className="flex gap-1 overflow-x-auto pb-0.5 -mx-1 px-1 scrollbar-none">
@@ -47,7 +47,7 @@ export function Layout() {
         <Outlet />
       </main>
       <footer className="border-t border-white/5 py-3 sm:py-4 text-center text-xs text-slate-500 px-3">
-        Arcanes Packs — jeu de cartes fantasy original
+        Anime Packs Combat — contenu fan non officiel · personnages © leurs ayants droit
       </footer>
     </div>
   );

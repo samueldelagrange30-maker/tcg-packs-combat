@@ -5,21 +5,22 @@ export function Home() {
     <div className="space-y-8">
       <section className="rounded-2xl border border-amber-500/30 bg-gradient-to-br from-purple-950/80 to-indigo-950/60 p-6 sm:p-10 shadow-xl shadow-purple-900/40">
         <p className="text-amber-400/90 text-sm font-semibold tracking-widest uppercase mb-2">
-          Bienvenue, invocateur
+          Bienvenue, collectionneur
         </p>
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Ouvre des packs. Construis ta légende. Domine le combat.
+          Ouvre des packs. Construis ton roster anime. Domine le combat.
         </h2>
         <p className="text-slate-300 max-w-2xl leading-relaxed mb-6">
-          <strong className="text-amber-300">Arcanes Packs</strong> est un TCG fantasy
-          où tu ouvres des packs de 5 cartes, enrichis ta collection et affrontes une IA
-          en combat tour par tour. Chaque carte possède de la <em>Vie</em>, une{' '}
-          <em>Attaque</em> et parfois un <em>effet spécial</em> unique (soin, poison,
-          bouclier, rage, drain, stun…).
+          <strong className="text-amber-300">Anime Packs Combat</strong> est un TCG fan-made
+          non officiel où tu ouvres des packs de 5 cartes, enrichis ta collection de
+          personnages d&apos;anime et affrontes une IA en combat tour par tour. Chaque carte
+          possède de la <em>Vie</em>, une <em>Attaque</em> et parfois un{' '}
+          <em>effet spécial</em> (soin, poison, bouclier, rage, drain, stun…).
         </p>
         <p className="text-slate-400 text-sm mb-8">
-          À ta première visite, 5 cartes de démarrage te sont offertes pour combattre
-          immédiatement. Ta collection est sauvegardée automatiquement.
+          À ta première visite, 5 cartes de démarrage (commun / peu commun) te sont
+          offertes. Ta collection est sauvegardée automatiquement. Contenu fan — non
+          affilié aux ayants droit.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
@@ -48,17 +49,17 @@ export function Home() {
           {
             title: 'Packs',
             icon: '🎁',
-            text: 'Ouvre un pack de 5 cartes avec animation de révélation. Les communes sont fréquentes ; les légendaires sont rares.',
+            text: 'Ouvre un pack de 5 cartes. Les communs sont fréquents ; les Dieux sont extrêmement rares.',
           },
           {
             title: 'Collection',
             icon: '📚',
-            text: 'Consulte toutes tes cartes : vie, attaque, effet spécial et rareté.',
+            text: 'Filtre par rareté (commun → dieu) et consulte vie, attaque, série et effet spécial.',
           },
           {
             title: 'Combat',
             icon: '⚔️',
-            text: 'Choisis jusqu\'à 3 cartes, affronte une équipe IA de puissance similaire et utilise tes effets spéciaux.',
+            text: "Choisis jusqu'à 3 cartes, affronte une équipe IA et utilise tes effets spéciaux.",
           },
         ].map((item) => (
           <div

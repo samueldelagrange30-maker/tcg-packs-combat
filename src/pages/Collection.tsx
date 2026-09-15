@@ -1,13 +1,12 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { CardView } from '../components/CardView';
-import { getCardById, RARITY_LABELS } from '../data/cards';
+import { getCardById, RARITY_LABELS, RARITY_ORDER } from '../data/cards';
 import { useCollection } from '../hooks/useCollection';
 import type { Rarity } from '../types';
 
-const ORDER: Rarity[] = ['legendaire', 'epique', 'rare', 'commune'];
-
 export function Collection() {
   const { owned, ready, resetCollection } = useCollection();
+  const [filter, setFilter] = useState<Rarity | 'tous'>('tous');
 
   const enriched = useMemo(() => {
     return owned
@@ -17,19 +16,27 @@ export function Collection() {
         return { ...def, instanceId: o.instanceId };
       })
       .filter((c): c is NonNullable<typeof c> => Boolean(c))
-      .sort((a, b) => ORDER.indexOf(a.rarete) - ORDER.indexOf(b.rarete));
+      .sort((a, b) => RARITY_ORDER.indexOf(a.rarete) - RARITY_ORDER.indexOf(b.rarete));
   }, [owned]);
 
   const counts = useMemo(() => {
     const c: Record<Rarity, number> = {
-      commune: 0,
+      commun: 0,
+      peu_commun: 0,
       rare: 0,
-      epique: 0,
+      super_rare: 0,
+      ultra_rare: 0,
       legendaire: 0,
+      dieu: 0,
     };
     for (const card of enriched) c[card.rarete] += 1;
     return c;
   }, [enriched]);
+
+  const filtered = useMemo(() => {
+    if (filter === 'tous') return enriched;
+    return enriched.filter((c) => c.rarete === filter);
+  }, [enriched, filter]);
 
   if (!ready) {
     return <p className="text-slate-400">Chargement de la collection…</p>;
@@ -59,23 +66,41 @@ export function Collection() {
       </div>
 
       <div className="flex flex-wrap gap-2 text-xs">
-        {ORDER.map((r) => (
-          <span
+        <button
+          type="button"
+          onClick={() => setFilter('tous')}
+          className={`px-2 py-1 rounded-lg border transition ${
+            filter === 'tous'
+              ? 'bg-amber-500/20 border-amber-400/50 text-amber-200'
+              : 'bg-white/5 border-white/10 text-slate-300 hover:bg-white/10'
+          }`}
+        >
+          Tous : {enriched.length}
+        </button>
+        {RARITY_ORDER.map((r) => (
+          <button
             key={r}
-            className="px-2 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300"
+            type="button"
+            onClick={() => setFilter(r)}
+            className={`px-2 py-1 rounded-lg border transition ${
+              filter === r
+                ? 'bg-amber-500/20 border-amber-400/50 text-amber-200'
+                : 'bg-white/5 border-white/10 text-slate-300 hover:bg-white/10'
+            }`}
           >
             {RARITY_LABELS[r]} : {counts[r]}
-          </span>
+          </button>
         ))}
       </div>
 
-      {enriched.length === 0 ? (
+      {filtered.length === 0 ? (
         <p className="text-slate-400">
-          Aucune carte. Ouvre des packs pour remplir ta collection !
+          Aucune carte{filter !== 'tous' ? ' pour ce filtre' : ''}. Ouvre des packs pour
+          remplir ta collection !
         </p>
       ) : (
         <div className="flex flex-wrap gap-3 sm:gap-4 justify-center sm:justify-start">
-          {enriched.map((card) => (
+          {filtered.map((card) => (
             <CardView key={card.instanceId} card={card} />
           ))}
         </div>

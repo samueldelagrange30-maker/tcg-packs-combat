@@ -15,6 +15,10 @@ function isBattle(card: CardDefinition | BattleCard): card is BattleCard {
   return 'vieMax' in card;
 }
 
+function hasSerie(card: CardDefinition | BattleCard): card is CardDefinition {
+  return 'serie' in card && typeof (card as CardDefinition).serie === 'string';
+}
+
 export function CardView({
   card,
   selected,
@@ -29,6 +33,7 @@ export function CardView({
   const vieMax = isBattle(card) ? card.vieMax : card.vie;
   const attaque = isBattle(card) ? card.attaque : card.attaque;
   const dead = isBattle(card) && card.vie <= 0;
+  const serie = hasSerie(card) ? card.serie : undefined;
 
   return (
     <button
@@ -52,9 +57,13 @@ export function CardView({
           {RARITY_LABELS[rarete]}
         </span>
       </div>
-      <h3 className={`font-bold text-white leading-tight mb-2 ${compact ? 'text-xs' : 'text-sm sm:text-base'}`}>
+      <h3 className={`font-bold text-white leading-tight ${compact ? 'text-xs' : 'text-sm sm:text-base'}`}>
         {card.nom}
       </h3>
+      {serie && !compact && (
+        <p className="text-[10px] text-white/70 mb-2 truncate">{serie}</p>
+      )}
+      {(!serie || compact) && <div className="mb-2" />}
       <div className={`space-y-1 text-white/95 ${compact ? 'text-[10px]' : 'text-xs sm:text-sm'}`}>
         <div className="flex justify-between">
           <span>❤️ Vie</span>

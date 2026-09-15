@@ -1,10 +1,18 @@
-export type Rarity = 'commune' | 'rare' | 'epique' | 'legendaire';
+export type Rarity =
+  | 'commun'
+  | 'peu_commun'
+  | 'rare'
+  | 'super_rare'
+  | 'ultra_rare'
+  | 'legendaire'
+  | 'dieu';
 
 export type EffectType = 'soin' | 'poison' | 'bouclier' | 'rage' | 'drain' | 'stun' | 'aucun';
 
 export interface CardDefinition {
   id: string;
   nom: string;
+  serie: string;
   emoji: string;
   vie: number;
   attaque: number;

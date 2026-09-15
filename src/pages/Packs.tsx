@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import { CardView } from '../components/CardView';
-import { RARITY_LABELS } from '../data/cards';
+import { RARITY_LABELS, RARITY_ORDER, RARITY_WEIGHTS } from '../data/cards';
 import { useCollection } from '../hooks/useCollection';
 import type { CardDefinition, Rarity } from '../types';
 import { openPack } from '../utils/packs';
 
 type Phase = 'idle' | 'opening' | 'revealed';
 
-const RARITY_ORDER: Rarity[] = ['legendaire', 'epique', 'rare', 'commune'];
+const HIGHLIGHT: Rarity[] = ['super_rare', 'ultra_rare', 'legendaire', 'dieu'];
+
+function oddsLabel(r: Rarity): string {
+  const total = Object.values(RARITY_WEIGHTS).reduce((a, b) => a + b, 0);
+  const pct = (RARITY_WEIGHTS[r] / total) * 100;
+  if (pct < 1) return `${pct.toFixed(1)}%`;
+  return `${Math.round(pct)}%`;
+}
 
 export function Packs() {
   const { addCards, owned } = useCollection();
@@ -50,12 +57,27 @@ export function Packs() {
       ? RARITY_ORDER.find((r) => cards.some((c) => c.rarete === r))
       : null;
 
+  const highlightMsg = (r: Rarity): string | null => {
+    switch (r) {
+      case 'dieu':
+        return '🌌 DIEU !!!';
+      case 'legendaire':
+        return '🔴 Légendaire !';
+      case 'ultra_rare':
+        return '🟡 Ultra rare !';
+      case 'super_rare':
+        return '🟣 Super rare !';
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="space-y-6">
       <div>
         <h2 className="text-2xl font-bold text-amber-300 mb-1">Ouverture de packs</h2>
         <p className="text-slate-400 text-sm">
-          Chaque pack contient 5 cartes. Collection actuelle :{' '}
+          Chaque pack contient 5 cartes anime. Collection actuelle :{' '}
           <strong className="text-white">{owned.length}</strong> cartes.
         </p>
       </div>
@@ -69,7 +91,7 @@ export function Packs() {
           >
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
               <span className="text-5xl group-hover:animate-bounce">🎁</span>
-              <span className="font-bold text-amber-300">Pack Arcanes</span>
+              <span className="font-bold text-amber-300">Pack Anime</span>
               <span className="text-xs text-slate-400">5 cartes</span>
             </div>
             <div className="absolute inset-0 rounded-2xl ring-2 ring-amber-400/20 animate-pulse pointer-events-none" />
@@ -97,6 +119,9 @@ export function Packs() {
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 min-h-[200px]">
             {cards.map((card, i) => {
               const shown = i < revealedCount;
+              const msg = HIGHLIGHT.includes(card.rarete)
+                ? highlightMsg(card.rarete)
+                : null;
               return (
                 <div
                   key={`${card.id}-${i}`}
@@ -109,9 +134,9 @@ export function Packs() {
                   {shown ? (
                     <div className="animate-card-pop">
                       <CardView card={card} />
-                      {(card.rarete === 'epique' || card.rarete === 'legendaire') && (
+                      {msg && (
                         <p className="text-center text-[10px] mt-1 font-semibold text-amber-300 animate-pulse">
-                          {card.rarete === 'legendaire' ? '✨ Légendaire !' : '💜 Épique !'}
+                          {msg}
                         </p>
                       )}
                     </div>
@@ -144,7 +169,7 @@ export function Packs() {
               <p className="text-emerald-300 font-medium text-center">
                 ✓ Cartes ajoutées à ta collection !
               </p>
-              {bestRarity && bestRarity !== 'commune' && (
+              {bestRarity && bestRarity !== 'commun' && (
                 <p className="text-sm text-amber-200/90">
                   Meilleure rareté : {RARITY_LABELS[bestRarity]}
                 </p>
@@ -162,8 +187,14 @@ export function Packs() {
       )}
 
       <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-slate-400">
-        <p className="font-semibold text-slate-300 mb-1">Probabilités</p>
-        <p>Commune 70% · Rare 20% · Épique 8% · Légendaire 2%</p>
+        <p className="font-semibold text-slate-300 mb-2">Probabilités</p>
+        <ul className="space-y-1">
+          {[...RARITY_ORDER].reverse().map((r) => (
+            <li key={r}>
+              {RARITY_LABELS[r]} — {oddsLabel(r)}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
