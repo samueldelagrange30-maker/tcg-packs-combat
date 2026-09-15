@@ -66,21 +66,17 @@ export function CardView({
         ${className}
       `}
     >
-      {/* Portrait zone: taller 3/4 frame, contain so heads aren't clipped */}
-      <div
-        className={`relative w-full overflow-hidden bg-gradient-to-b from-slate-900 to-black ${
-          compact ? 'aspect-[3/4]' : 'aspect-[3/4]'
-        }`}
-      >
+      {/* Cover fills the frame; object-top keeps faces in view on tall portraits */}
+      <div className="relative w-full aspect-[3/4] overflow-hidden bg-black">
         <img
           src={src}
           alt=""
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-contain object-top origin-top transition-transform duration-500 group-hover:scale-[1.03]"
+          className="absolute inset-0 h-full w-full object-cover object-[center_15%] origin-top transition-transform duration-500 group-hover:scale-[1.04]"
           onError={() => setSrc(fallback)}
         />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
         <span className="absolute top-1.5 right-1.5 z-10 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-white/95 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded border border-white/15">
           {RARITY_LABELS[rarete]}
         </span>
