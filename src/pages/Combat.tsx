@@ -6,9 +6,12 @@ import type { BattleCard, CombatPhase } from '../types';
 import {
   alive,
   buildAiTeam,
+  isSelfEffect,
+  needsEnemyTarget,
   performAttack,
   pickAiAttacker,
   pickAiTarget,
+  shouldAiUseSpecial,
   tickPoison,
   toBattleCard,
   useSpecial,
@@ -29,6 +32,45 @@ function applyPoisonTicks(team: BattleCard[]): { team: BattleCard[]; messages: s
     }
   }
   return { team: next, messages };
+}
+
+function phaseLabel(phase: CombatPhase): string {
+  switch (phase) {
+    case 'victoire':
+      return '🏆 Victoire';
+    case 'defaite':
+      return '💀 Défaite';
+    case 'joueur':
+      return 'Ton tour';
+    case 'ennemi':
+      return 'Tour ennemi…';
+    default:
+      return 'Combat';
+  }
+}
+
+function phaseHint(
+  phase: CombatPhase,
+  mode: 'attaque' | 'effet',
+  attacker: BattleCard | undefined,
+): string {
+  if (phase === 'ennemi') return "L'adversaire réfléchit et agit…";
+  if (phase === 'victoire') return 'Tous les ennemis sont vaincus.';
+  if (phase === 'defaite') return 'Ton équipe est hors combat.';
+  if (phase !== 'joueur') return '';
+
+  if (!attacker) {
+    return mode === 'attaque'
+      ? '① Choisis un allié prêt à attaquer.'
+      : '① Choisis un allié avec un effet disponible.';
+  }
+  if (mode === 'attaque') {
+    return `② ${attacker.nom} attaque — choisis une cible ennemie.`;
+  }
+  if (isSelfEffect(attacker.effet)) {
+    return `${attacker.nom} peut lancer son effet immédiatement.`;
+  }
+  return `② ${attacker.nom} — choisis une cible pour l'effet.`;
 }
 
 export function Combat() {
@@ -53,7 +95,7 @@ export function Combat() {
 
   const pushLogs = useCallback((msgs: string[]) => {
     if (msgs.length === 0) return;
-    setLog((prev) => [...msgs].reverse().concat(prev).slice(0, 50));
+    setLog((prev) => [...msgs].reverse().concat(prev).slice(0, 60));
   }, []);
 
   const toggleSelect = (instanceId: string) => {
@@ -77,8 +119,8 @@ export function Combat() {
     setAttackerId(null);
     setMode('attaque');
     setLog([
-      `Tu affrontes : ${eTeam.map((c) => c.nom).join(', ')}.`,
-      'Le combat commence !',
+      `Adversaires : ${eTeam.map((c) => `${c.emoji} ${c.nom}`).join(' · ')}.`,
+      '⚔️ Le combat commence — à toi de jouer !',
     ]);
     setPhase('joueur');
   };
@@ -103,6 +145,7 @@ export function Combat() {
 
   const runEnemyTurn = (pTeam: BattleCard[], eTeam: BattleCard[]) => {
     setPhase('ennemi');
+    setAttackerId(null);
     setTimeout(() => {
       const msgs: string[] = [];
       let players = cloneTeam(pTeam);
@@ -121,10 +164,10 @@ export function Combat() {
         return;
       }
 
-      const attackerRef = pickAiAttacker(enemies);
+      const attackerRef = pickAiAttacker(enemies, players);
       if (!attackerRef) {
         enemies = enemies.map((c) => ({ ...c, etourdi: false }));
-        msgs.push("L'ennemi est étourdi et passe son tour…");
+        msgs.push("💫 L'ennemi est étourdi et passe son tour…");
         setPlayerTeam(players);
         setEnemyTeam(enemies);
         setAttackerId(null);
@@ -138,28 +181,25 @@ export function Combat() {
       const eIdx = enemies.findIndex((c) => c.instanceId === attackerRef.instanceId);
       const caster = enemies[eIdx];
 
-      // Chance to use special before attacking
-      if (!caster.effetUtilise && caster.effet !== 'aucun' && Math.random() < 0.4) {
-        const selfEffects = ['soin', 'bouclier', 'rage'];
-        if (selfEffects.includes(caster.effet)) {
-          const msg = useSpecial(caster, null);
-          if (msg) msgs.push(`🤖 ${msg}`);
-        } else {
-          const target = pickAiTarget(players);
-          if (target) {
-            const tIdx = players.findIndex((c) => c.instanceId === target.instanceId);
-            const msg = useSpecial(caster, players[tIdx]);
-            if (msg) msgs.push(`🤖 ${msg}`);
-          }
+      const special = shouldAiUseSpecial(caster, players);
+      if (special.use) {
+        let target: BattleCard | null = null;
+        if (special.target) {
+          const tIdx = players.findIndex((c) => c.instanceId === special.target!.instanceId);
+          if (tIdx >= 0) target = players[tIdx];
         }
+        const msg = useSpecial(caster, target);
+        if (msg) msgs.push(`🤖 ${msg}`);
       }
 
-      if (caster.vie > 0) {
-        const target = pickAiTarget(players);
-        if (target) {
-          const tIdx = players.findIndex((c) => c.instanceId === target.instanceId);
-          const msg = performAttack(caster, players[tIdx]);
-          msgs.push(`🤖 ${msg}`);
+      if (caster.vie > 0 && !caster.etourdi) {
+        const targetRef = pickAiTarget(players, caster);
+        if (targetRef) {
+          const tIdx = players.findIndex((c) => c.instanceId === targetRef.instanceId);
+          if (tIdx >= 0 && players[tIdx].vie > 0) {
+            const msg = performAttack(caster, players[tIdx]);
+            msgs.push(`🤖 ${msg}`);
+          }
         }
       }
 
@@ -177,7 +217,7 @@ export function Combat() {
       setPhase('joueur');
       msgs.push('— À toi de jouer —');
       pushLogs(msgs);
-    }, 650);
+    }, 700);
   };
 
   const resolvePlayerAction = (
@@ -205,7 +245,7 @@ export function Combat() {
     if (aIdx < 0) return;
     const ally = players[aIdx];
     if (ally.vie <= 0 || ally.etourdi) {
-      msgs.push(`${ally.nom} ne peut pas agir.`);
+      msgs.push(`${ally.nom} ne peut pas agir (KO ou étourdi).`);
       pushLogs(msgs);
       return;
     }
@@ -217,18 +257,17 @@ export function Combat() {
       const msg = performAttack(ally, enemies[tIdx]);
       msgs.push(msg);
     } else {
-      const needsTarget = ['poison', 'drain', 'stun'].includes(ally.effet);
-      let target: BattleCard | null = null;
-      if (needsTarget) {
-        if (!enemyId) return;
-        const tIdx = enemies.findIndex((c) => c.instanceId === enemyId);
-        if (tIdx < 0 || enemies[tIdx].vie <= 0) return;
-        target = enemies[tIdx];
-      }
       if (ally.effetUtilise || ally.effet === 'aucun') {
         msgs.push(`${ally.nom} n'a plus d'effet disponible.`);
         pushLogs(msgs);
         return;
+      }
+      let target: BattleCard | null = null;
+      if (needsEnemyTarget(ally.effet)) {
+        if (!enemyId) return;
+        const tIdx = enemies.findIndex((c) => c.instanceId === enemyId);
+        if (tIdx < 0 || enemies[tIdx].vie <= 0) return;
+        target = enemies[tIdx];
       }
       const msg = useSpecial(ally, target);
       if (msg) msgs.push(msg);
@@ -249,9 +288,8 @@ export function Combat() {
     if (phase !== 'joueur' || card.vie <= 0 || card.etourdi) return;
 
     if (mode === 'effet') {
-      const selfEffects = ['soin', 'bouclier', 'rage'];
       if (card.effetUtilise || card.effet === 'aucun') return;
-      if (selfEffects.includes(card.effet)) {
+      if (isSelfEffect(card.effet)) {
         resolvePlayerAction('effet', card.instanceId, null);
         return;
       }
@@ -281,6 +319,18 @@ export function Combat() {
     setMode('attaque');
   };
 
+  const selectedAttacker = playerTeam.find((c) => c.instanceId === attackerId);
+  const canUseEffectMode = playerTeam.some(
+    (c) => c.vie > 0 && !c.etourdi && !c.effetUtilise && c.effet !== 'aucun',
+  );
+  const canAttackMode = playerTeam.some((c) => c.vie > 0 && !c.etourdi);
+
+  const enemyTargetable =
+    phase === 'joueur' &&
+    Boolean(attackerId) &&
+    (mode === 'attaque' ||
+      (mode === 'effet' && selectedAttacker && needsEnemyTarget(selectedAttacker.effet)));
+
   if (!ready) return <p className="text-slate-400">Chargement…</p>;
 
   if (phase === 'selection') {
@@ -309,14 +359,14 @@ export function Combat() {
                 />
               ))}
             </div>
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sticky bottom-3 z-10">
               <button
                 type="button"
                 disabled={selectedIds.length === 0}
                 onClick={startBattle}
-                className="px-6 py-3 rounded-xl bg-rose-600 text-white font-bold hover:bg-rose-500 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-lg shadow-rose-900/40"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-rose-600 text-white font-bold hover:bg-rose-500 disabled:opacity-40 disabled:cursor-not-allowed transition shadow-lg shadow-rose-900/40"
               >
-                Lancer le combat ({selectedIds.length})
+                Lancer le combat ({selectedIds.length}/3)
               </button>
             </div>
           </>
@@ -325,35 +375,71 @@ export function Combat() {
     );
   }
 
-  const selectedAttacker = playerTeam.find((c) => c.instanceId === attackerId);
-  const enemyTargetable =
-    phase === 'joueur' &&
-    Boolean(attackerId) &&
-    (mode === 'attaque' ||
-      (mode === 'effet' &&
-        selectedAttacker &&
-        ['poison', 'drain', 'stun'].includes(selectedAttacker.effet)));
-
   return (
-    <div className="space-y-5">
+    <div className="space-y-4 sm:space-y-5 pb-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-2xl font-bold text-amber-300">
-          {phase === 'victoire' && '🏆 Victoire'}
-          {phase === 'defaite' && '💀 Défaite'}
-          {phase === 'joueur' && 'Ton tour'}
-          {phase === 'ennemi' && 'Tour ennemi…'}
-        </h2>
+        <div>
+          <h2 className="text-xl sm:text-2xl font-bold text-amber-300">{phaseLabel(phase)}</h2>
+          <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
+            {phaseHint(phase, mode, selectedAttacker)}
+          </p>
+        </div>
         <button
           type="button"
           onClick={resetToSelection}
-          className="text-sm px-3 py-1.5 rounded-lg border border-white/20 text-slate-300 hover:bg-white/5"
+          className="text-sm px-3 py-1.5 rounded-lg border border-white/20 text-slate-300 hover:bg-white/5 shrink-0"
         >
           Nouveau combat
         </button>
       </div>
 
-      <div>
-        <h3 className="text-sm font-semibold text-rose-300 mb-2">Équipe ennemie</h3>
+      {(phase === 'victoire' || phase === 'defaite') && (
+        <div
+          className={`rounded-2xl border p-5 sm:p-6 text-center shadow-xl ${
+            phase === 'victoire'
+              ? 'border-emerald-400/40 bg-emerald-950/40'
+              : 'border-rose-400/40 bg-rose-950/40'
+          }`}
+        >
+          <p className="text-4xl mb-2">{phase === 'victoire' ? '🏆' : '💀'}</p>
+          <h3 className="text-xl font-bold text-white mb-1">
+            {phase === 'victoire' ? 'Victoire !' : 'Défaite…'}
+          </h3>
+          <p className="text-sm text-slate-300 mb-4">
+            {phase === 'victoire'
+              ? 'Tu as vaincu toute l’équipe adverse.'
+              : 'Toutes tes cartes sont hors combat.'}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-2 justify-center">
+            <button
+              type="button"
+              onClick={resetToSelection}
+              className="px-6 py-3 rounded-xl bg-amber-500 text-purple-950 font-bold hover:bg-amber-400 transition"
+            >
+              Rejouer
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div
+        className={`rounded-xl border p-3 sm:p-4 transition-opacity ${
+          phase === 'ennemi' ? 'border-rose-500/40 bg-rose-950/20' : 'border-white/10 bg-white/[0.03]'
+        }`}
+      >
+        <div className="flex items-center justify-between mb-2 gap-2">
+          <h3 className="text-sm font-semibold text-rose-300">Équipe ennemie</h3>
+          {phase === 'ennemi' && (
+            <span className="text-[10px] uppercase tracking-wide text-rose-200/80 animate-pulse">
+              Action en cours…
+            </span>
+          )}
+          {enemyTargetable && (
+            <span className="text-[10px] uppercase tracking-wide text-rose-200/80">
+              Choisis une cible
+            </span>
+          )}
+        </div>
         <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
           {enemyTeam.map((card) => (
             <CardView
@@ -363,17 +449,23 @@ export function Combat() {
               compact
               disabled={!enemyTargetable || card.vie <= 0}
               onClick={
-                enemyTargetable && card.vie > 0
-                  ? () => onSelectEnemy(card)
-                  : undefined
+                enemyTargetable && card.vie > 0 ? () => onSelectEnemy(card) : undefined
               }
-              className={enemyTargetable && card.vie > 0 ? 'ring-2 ring-rose-400/60' : ''}
+              className={
+                enemyTargetable && card.vie > 0
+                  ? 'ring-2 ring-rose-400/70 animate-pulse-soft'
+                  : ''
+              }
             />
           ))}
         </div>
       </div>
 
-      <div>
+      <div
+        className={`rounded-xl border p-3 sm:p-4 ${
+          phase === 'joueur' ? 'border-sky-500/40 bg-sky-950/20' : 'border-white/10 bg-white/[0.03]'
+        }`}
+      >
         <h3 className="text-sm font-semibold text-sky-300 mb-2">Ton équipe</h3>
         <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
           {playerTeam.map((card) => {
@@ -399,65 +491,85 @@ export function Combat() {
       </div>
 
       {phase === 'joueur' && (
-        <div className="flex flex-wrap gap-2 items-center justify-center">
-          <button
-            type="button"
-            onClick={() => {
-              setMode('attaque');
-              setAttackerId(null);
-            }}
-            className={`px-4 py-2 rounded-lg text-sm font-medium border ${
-              mode === 'attaque'
-                ? 'bg-amber-500/20 border-amber-400 text-amber-200'
-                : 'border-white/20 text-slate-400'
-            }`}
-          >
-            ⚔️ Attaquer
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setMode('effet');
-              setAttackerId(null);
-            }}
-            className={`px-4 py-2 rounded-lg text-sm font-medium border ${
-              mode === 'effet'
-                ? 'bg-fuchsia-500/20 border-fuchsia-400 text-fuchsia-200'
-                : 'border-white/20 text-slate-400'
-            }`}
-          >
-            ✨ Effet spécial
-          </button>
-          <p className="text-xs text-slate-400 w-full text-center sm:w-auto sm:ml-2">
+        <div className="rounded-xl border border-white/10 bg-black/25 p-3 space-y-2">
+          <div className="flex flex-wrap gap-2 items-center justify-center">
+            <button
+              type="button"
+              disabled={!canAttackMode}
+              onClick={() => {
+                setMode('attaque');
+                setAttackerId(null);
+              }}
+              className={`px-4 py-2.5 rounded-lg text-sm font-medium border min-h-[44px] disabled:opacity-40 ${
+                mode === 'attaque'
+                  ? 'bg-amber-500/20 border-amber-400 text-amber-200'
+                  : 'border-white/20 text-slate-400'
+              }`}
+            >
+              ⚔️ Attaquer
+            </button>
+            <button
+              type="button"
+              disabled={!canUseEffectMode}
+              onClick={() => {
+                setMode('effet');
+                setAttackerId(null);
+              }}
+              className={`px-4 py-2.5 rounded-lg text-sm font-medium border min-h-[44px] disabled:opacity-40 ${
+                mode === 'effet'
+                  ? 'bg-fuchsia-500/20 border-fuchsia-400 text-fuchsia-200'
+                  : 'border-white/20 text-slate-400'
+              }`}
+            >
+              ✨ Effet spécial
+            </button>
+            {attackerId && (
+              <button
+                type="button"
+                onClick={() => setAttackerId(null)}
+                className="px-3 py-2 rounded-lg text-xs border border-white/15 text-slate-400 hover:bg-white/5 min-h-[44px]"
+              >
+                Annuler sélection
+              </button>
+            )}
+          </div>
+          <p className="text-xs text-slate-400 text-center">
             {mode === 'attaque'
               ? 'Sélectionne un allié, puis une cible ennemie.'
-              : 'Sélectionne un allié (effet auto si soin/bouclier/rage, sinon choisis une cible).'}
+              : 'Effet auto si soin / bouclier / rage ; sinon choisis une cible ennemie.'}
           </p>
         </div>
       )}
 
-      {(phase === 'victoire' || phase === 'defaite') && (
-        <div className="text-center">
-          <button
-            type="button"
-            onClick={resetToSelection}
-            className="px-6 py-3 rounded-xl bg-amber-500 text-purple-950 font-bold hover:bg-amber-400"
-          >
-            Rejouer
-          </button>
-        </div>
-      )}
-
-      <div className="rounded-xl border border-white/10 bg-black/30 p-3 max-h-48 overflow-y-auto">
-        <h3 className="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">
+      <div className="rounded-xl border border-white/10 bg-black/30 p-3 max-h-44 sm:max-h-52 overflow-y-auto">
+        <h3 className="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide sticky top-0 bg-black/80 backdrop-blur-sm py-1">
           Journal de combat
         </h3>
         <ul className="space-y-1 text-sm text-slate-300">
-          {log.map((line, i) => (
-            <li key={`${i}-${line.slice(0, 20)}`} className="border-b border-white/5 pb-1">
-              {line}
-            </li>
-          ))}
+          {log.map((line, i) => {
+            const isAi = line.startsWith('🤖');
+            const isSep = line.startsWith('—');
+            const isWin = line.includes('Victoire');
+            const isLose = line.includes('Défaite');
+            return (
+              <li
+                key={`${i}-${line.slice(0, 24)}`}
+                className={`border-b border-white/5 pb-1 ${
+                  isAi
+                    ? 'text-rose-200/90'
+                    : isSep
+                      ? 'text-amber-300/90 font-medium'
+                      : isWin
+                        ? 'text-emerald-300 font-semibold'
+                        : isLose
+                          ? 'text-rose-300 font-semibold'
+                          : ''
+                }`}
+              >
+                {line}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

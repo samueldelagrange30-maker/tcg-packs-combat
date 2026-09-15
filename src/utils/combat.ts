@@ -83,10 +83,7 @@ export function tickPoison(card: BattleCard): number {
   return dmg;
 }
 
-export function useSpecial(
-  caster: BattleCard,
-  target: BattleCard | null,
-): string {
+export function useSpecial(caster: BattleCard, target: BattleCard | null): string {
   if (caster.effetUtilise || caster.effet === 'aucun' || caster.vie <= 0) {
     return '';
   }
@@ -130,6 +127,14 @@ export function useSpecial(
   }
 }
 
+export function attackDamage(attacker: BattleCard): number {
+  return attacker.rageActif ? attacker.attaque * 2 : attacker.attaque;
+}
+
+export function effectiveHp(card: BattleCard): number {
+  return card.vie + card.bouclier;
+}
+
 export function performAttack(attacker: BattleCard, defender: BattleCard): string {
   let dmg = attacker.attaque;
   if (attacker.rageActif) {
@@ -148,14 +153,113 @@ export function alive(cards: BattleCard[]): BattleCard[] {
   return cards.filter((c) => c.vie > 0);
 }
 
-export function pickAiAttacker(team: BattleCard[]): BattleCard | null {
+/** Prefer cards that can secure a kill, then highest attack among ready units. */
+export function pickAiAttacker(team: BattleCard[], foes: BattleCard[]): BattleCard | null {
   const ready = alive(team).filter((c) => !c.etourdi);
   if (ready.length === 0) return null;
-  return ready[Math.floor(Math.random() * ready.length)];
+
+  const foeList = alive(foes);
+  const killers = ready.filter((atk) =>
+    foeList.some((f) => attackDamage(atk) >= effectiveHp(f)),
+  );
+  const pool = killers.length > 0 ? killers : ready;
+  return pool.reduce((best, c) => (attackDamage(c) > attackDamage(best) ? c : best), pool[0]);
 }
 
-export function pickAiTarget(team: BattleCard[]): BattleCard | null {
+/**
+ * Prefer killing blows; otherwise lowest effective HP, tie-break by highest threat (attaque).
+ */
+export function pickAiTarget(team: BattleCard[], attacker?: BattleCard | null): BattleCard | null {
   const list = alive(team);
   if (list.length === 0) return null;
-  return list.reduce((weakest, c) => (c.vie < weakest.vie ? c : weakest), list[0]);
+
+  if (attacker) {
+    const dmg = attackDamage(attacker);
+    const killable = list.filter((c) => dmg >= effectiveHp(c));
+    if (killable.length > 0) {
+      return killable.reduce((best, c) => (c.attaque > best.attaque ? c : best), killable[0]);
+    }
+  }
+
+  return list.reduce((weakest, c) => {
+    const wHp = effectiveHp(weakest);
+    const cHp = effectiveHp(c);
+    if (cHp < wHp) return c;
+    if (cHp === wHp && c.attaque > weakest.attaque) return c;
+    return weakest;
+  }, list[0]);
+}
+
+const SELF_EFFECTS = new Set(['soin', 'bouclier', 'rage']);
+
+export function isSelfEffect(effet: BattleCard['effet']): boolean {
+  return SELF_EFFECTS.has(effet);
+}
+
+export function needsEnemyTarget(effet: BattleCard['effet']): boolean {
+  return effet === 'poison' || effet === 'drain' || effet === 'stun';
+}
+
+/** Decide whether the AI should spend its special this turn (useful, not spammy). */
+export function shouldAiUseSpecial(
+  caster: BattleCard,
+  players: BattleCard[],
+): { use: boolean; target: BattleCard | null } {
+  if (caster.effetUtilise || caster.effet === 'aucun' || caster.vie <= 0) {
+    return { use: false, target: null };
+  }
+
+  const foes = alive(players);
+
+  switch (caster.effet) {
+    case 'soin': {
+      const missing = caster.vieMax - caster.vie;
+      const useful = missing >= Math.min(8, caster.effetValeur * 0.4);
+      const urgent = caster.vie <= caster.vieMax * 0.55;
+      return { use: useful && (urgent || missing >= caster.effetValeur * 0.6), target: null };
+    }
+    case 'bouclier': {
+      const noShield = caster.bouclier === 0;
+      const hurt = caster.vie <= caster.vieMax * 0.75;
+      return { use: noShield && (hurt || foes.some((f) => f.attaque >= 12)), target: null };
+    }
+    case 'rage': {
+      if (foes.length === 0) return { use: false, target: null };
+      const withRage = { ...caster, rageActif: true };
+      const target = pickAiTarget(players, withRage);
+      if (!target) return { use: false, target: null };
+      const normal = caster.attaque;
+      const doubled = caster.attaque * 2;
+      const hp = effectiveHp(target);
+      const enablesKill = doubled >= hp && normal < hp;
+      const strongTarget = hp > normal;
+      return { use: enablesKill || strongTarget, target: null };
+    }
+    case 'drain': {
+      if (foes.length === 0) return { use: false, target: null };
+      const target = pickAiTarget(players, null);
+      const lowHp = caster.vie <= caster.vieMax * 0.7;
+      const canFinish =
+        target !== null && caster.effetValeur >= effectiveHp(target);
+      return { use: lowHp || canFinish || foes.length === 1, target };
+    }
+    case 'poison': {
+      if (foes.length === 0) return { use: false, target: null };
+      const candidates = foes.filter((f) => f.poisonTours === 0 && f.vie > caster.attaque);
+      const target =
+        candidates.length > 0
+          ? candidates.reduce((a, b) => (a.vie > b.vie ? a : b), candidates[0])
+          : pickAiTarget(players, null);
+      return { use: target !== null && target.poisonTours === 0, target };
+    }
+    case 'stun': {
+      if (foes.length === 0) return { use: false, target: null };
+      const threats = foes.filter((f) => !f.etourdi);
+      if (threats.length === 0) return { use: false, target: null };
+      const target = threats.reduce((a, b) => (a.attaque > b.attaque ? a : b), threats[0]);
+      return { use: true, target };
+    }
+    default:
+      return { use: false, target: null };
+  }
 }
