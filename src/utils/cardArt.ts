@@ -4,10 +4,13 @@ const RARITY_GRADIENT: Record<Rarity, [string, string, string]> = {
   commun: ['#334155', '#1e293b', '#0f172a'],
   peu_commun: ['#065f46', '#064e3b', '#022c22'],
   rare: ['#1e3a8a', '#1e40af', '#0c1a4a'],
-  super_rare: ['#581c87', '#6b21a8', '#2e1065'],
-  ultra_rare: ['#92400e', '#b45309', '#451a03'],
+  epique: ['#581c87', '#6b21a8', '#2e1065'],
   legendaire: ['#9f1239', '#be123c', '#4c0519'],
-  dieu: ['#7c3aed', '#db2777', '#ca8a04'],
+  mythique: ['#92400e', '#b45309', '#451a03'],
+  divine: ['#7c3aed', '#db2777', '#ca8a04'],
+  celeste: ['#0e7490', '#0891b2', '#164e63'],
+  supreme: ['#b45309', '#f59e0b', '#7c2d12'],
+  unique: ['#4c1d95', '#ec4899', '#fbbf24'],
 };
 
 export function initialsFromName(nom: string): string {

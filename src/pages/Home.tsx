@@ -4,8 +4,8 @@ import { resolveCardImage } from '../utils/cardArt';
 
 const showcase = [
   CATALOGUE.find((c) => c.id.includes('luffy') && c.rarete === 'legendaire'),
-  CATALOGUE.find((c) => c.id.includes('goku') && c.rarete === 'dieu'),
-  CATALOGUE.find((c) => c.id.includes('gojo')),
+  CATALOGUE.find((c) => c.id.includes('goku-ultra-instinct-ultime') && c.rarete === 'unique'),
+  CATALOGUE.find((c) => c.id.includes('gojo') && c.rarete === 'mythique'),
 ].filter(Boolean) as typeof CATALOGUE;
 
 export function Home() {
@@ -93,7 +93,7 @@ export function Home() {
         {[
           {
             title: 'Packs cinématiques',
-            text: 'Foil shimmer, révélations progressives et rafale de rareté pour les ultra / légendaires / dieux.',
+            text: 'Foil shimmer, révélations progressives et rafale de rareté jusqu’aux cartes Uniques.',
           },
           {
             title: 'Collection premium',

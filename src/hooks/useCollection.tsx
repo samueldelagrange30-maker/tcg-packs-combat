@@ -12,8 +12,8 @@ import type { CardDefinition, OwnedCard } from '../types';
 import { newInstanceId } from '../utils/combat';
 
 /** Bumped to invalidate old fantasy-card collections */
-const STORAGE_KEY = 'tcg-anime-collection-v3';
-const STARTER_FLAG = 'tcg-anime-starter-granted-v3';
+const STORAGE_KEY = 'tcg-anime-collection-v5';
+const STARTER_FLAG = 'tcg-anime-starter-granted-v5';
 
 function loadOwned(): OwnedCard[] {
   try {

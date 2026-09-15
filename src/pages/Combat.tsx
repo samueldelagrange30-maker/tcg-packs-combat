@@ -5,15 +5,20 @@ import { useCollection } from '../hooks/useCollection';
 import type { BattleCard, CombatPhase } from '../types';
 import {
   alive,
+  applyAuraAndAllyAtk,
   buildAiTeam,
+  isPassiveEffect,
   isSelfEffect,
   needsEnemyTarget,
+  needsEnemyTeam,
   performAttack,
   pickAiAttacker,
   pickAiTarget,
   shouldAiUseSpecial,
   tickPoison,
+  tickStartOfTurn,
   toBattleCard,
+  tryLastStandStrike,
   useSpecial,
 } from '../utils/combat';
 
@@ -27,11 +32,33 @@ function applyPoisonTicks(team: BattleCard[]): { team: BattleCard[]; messages: s
   for (const c of next) {
     const dmg = tickPoison(c);
     if (dmg > 0) {
-      messages.push(`☠ Le poison inflige ${dmg} dégâts à ${c.nom}.`);
+      messages.push(`☠ Poison/Brûlure inflige ${dmg} dégâts à ${c.nom}.`);
       if (c.vie <= 0) messages.push(`${c.nom} succombe au poison !`);
     }
   }
   return { team: next, messages };
+}
+
+function applyStartTicks(team: BattleCard[]): { team: BattleCard[]; messages: string[] } {
+  const next = cloneTeam(team);
+  const messages = tickStartOfTurn(next);
+  return { team: next, messages };
+}
+
+function syncAuras(players: BattleCard[], enemies: BattleCard[]) {
+  applyAuraAndAllyAtk(players, enemies);
+  applyAuraAndAllyAtk(enemies, players);
+}
+
+function collectLastStandStrikes(team: BattleCard[], foes: BattleCard[]): string[] {
+  const msgs: string[] = [];
+  for (const c of team) {
+    if (c.vie <= 0 && c.lastStandStrike) {
+      const m = tryLastStandStrike(c, foes);
+      if (m) msgs.push(m);
+    }
+  }
+  return msgs;
 }
 
 function phaseLabel(phase: CombatPhase): string {
@@ -67,7 +94,7 @@ function phaseHint(
   if (mode === 'attaque') {
     return `② ${attacker.nom} attaque — choisis une cible ennemie.`;
   }
-  if (isSelfEffect(attacker.effet)) {
+  if (isSelfEffect(attacker.effet) || needsEnemyTeam(attacker.effet)) {
     return `${attacker.nom} peut lancer son effet immédiatement.`;
   }
   return `② ${attacker.nom} — choisis une cible pour l'effet.`;
@@ -114,6 +141,7 @@ export function Combat() {
 
     const pTeam = defs.map((d) => toBattleCard(d.def, d.instanceId));
     const eTeam = buildAiTeam(defs.map((d) => d.def));
+    syncAuras(pTeam, eTeam);
     setPlayerTeam(pTeam);
     setEnemyTeam(eTeam);
     setAttackerId(null);
@@ -151,9 +179,15 @@ export function Combat() {
       let players = cloneTeam(pTeam);
       let enemies = cloneTeam(eTeam);
 
+      const startE = applyStartTicks(enemies);
+      enemies = startE.team;
+      msgs.push(...startE.messages);
+
       const poisonP = applyPoisonTicks(players);
       players = poisonP.team;
       msgs.push(...poisonP.messages);
+      msgs.push(...collectLastStandStrikes(players, enemies));
+      syncAuras(players, enemies);
 
       if (alive(players).length === 0) {
         setPlayerTeam(players);
@@ -181,14 +215,14 @@ export function Combat() {
       const eIdx = enemies.findIndex((c) => c.instanceId === attackerRef.instanceId);
       const caster = enemies[eIdx];
 
-      const special = shouldAiUseSpecial(caster, players);
+      const special = shouldAiUseSpecial(caster, players, enemies);
       if (special.use) {
         let target: BattleCard | null = null;
         if (special.target) {
           const tIdx = players.findIndex((c) => c.instanceId === special.target!.instanceId);
           if (tIdx >= 0) target = players[tIdx];
         }
-        const msg = useSpecial(caster, target);
+        const msg = useSpecial(caster, target, enemies, players);
         if (msg) msgs.push(`🤖 ${msg}`);
       }
 
@@ -197,11 +231,13 @@ export function Combat() {
         if (targetRef) {
           const tIdx = players.findIndex((c) => c.instanceId === targetRef.instanceId);
           if (tIdx >= 0 && players[tIdx].vie > 0) {
-            const msg = performAttack(caster, players[tIdx]);
+            const msg = performAttack(caster, players[tIdx], players);
             msgs.push(`🤖 ${msg}`);
+            msgs.push(...collectLastStandStrikes(players, enemies));
           }
         }
       }
+      syncAuras(players, enemies);
 
       enemies[eIdx] = { ...caster, etourdi: false };
 
@@ -231,9 +267,15 @@ export function Combat() {
     let players = cloneTeam(playerTeam);
     let enemies = cloneTeam(enemyTeam);
 
+    const startP = applyStartTicks(players);
+    players = startP.team;
+    msgs.push(...startP.messages);
+
     const poisonE = applyPoisonTicks(enemies);
     enemies = poisonE.team;
     msgs.push(...poisonE.messages);
+    msgs.push(...collectLastStandStrikes(enemies, players));
+    syncAuras(players, enemies);
 
     if (alive(enemies).length === 0) {
       pushLogs(msgs);
@@ -254,10 +296,11 @@ export function Combat() {
       if (!enemyId) return;
       const tIdx = enemies.findIndex((c) => c.instanceId === enemyId);
       if (tIdx < 0 || enemies[tIdx].vie <= 0) return;
-      const msg = performAttack(ally, enemies[tIdx]);
+      const msg = performAttack(ally, enemies[tIdx], enemies);
       msgs.push(msg);
+      msgs.push(...collectLastStandStrikes(enemies, players));
     } else {
-      if (ally.effetUtilise || ally.effet === 'aucun') {
+      if (ally.effetUtilise || ally.effet === 'aucun' || isPassiveEffect(ally.effet)) {
         msgs.push(`${ally.nom} n'a plus d'effet disponible.`);
         pushLogs(msgs);
         return;
@@ -269,10 +312,12 @@ export function Combat() {
         if (tIdx < 0 || enemies[tIdx].vie <= 0) return;
         target = enemies[tIdx];
       }
-      const msg = useSpecial(ally, target);
+      const msg = useSpecial(ally, target, players, enemies);
       if (msg) msgs.push(msg);
+      msgs.push(...collectLastStandStrikes(enemies, players));
     }
 
+    syncAuras(players, enemies);
     players[aIdx] = { ...ally, etourdi: false };
     pushLogs(msgs);
 
@@ -288,8 +333,8 @@ export function Combat() {
     if (phase !== 'joueur' || card.vie <= 0 || card.etourdi) return;
 
     if (mode === 'effet') {
-      if (card.effetUtilise || card.effet === 'aucun') return;
-      if (isSelfEffect(card.effet)) {
+      if (card.effetUtilise || card.effet === 'aucun' || isPassiveEffect(card.effet)) return;
+      if (isSelfEffect(card.effet) || needsEnemyTeam(card.effet)) {
         resolvePlayerAction('effet', card.instanceId, null);
         return;
       }
@@ -321,7 +366,12 @@ export function Combat() {
 
   const selectedAttacker = playerTeam.find((c) => c.instanceId === attackerId);
   const canUseEffectMode = playerTeam.some(
-    (c) => c.vie > 0 && !c.etourdi && !c.effetUtilise && c.effet !== 'aucun',
+    (c) =>
+      c.vie > 0 &&
+      !c.etourdi &&
+      !c.effetUtilise &&
+      c.effet !== 'aucun' &&
+      !isPassiveEffect(c.effet),
   );
   const canAttackMode = playerTeam.some((c) => c.vie > 0 && !c.etourdi);
 
@@ -473,7 +523,10 @@ export function Combat() {
               card.vie > 0 &&
               !card.etourdi &&
               (mode === 'attaque' ||
-                (mode === 'effet' && !card.effetUtilise && card.effet !== 'aucun'));
+                (mode === 'effet' &&
+                  !card.effetUtilise &&
+                  card.effet !== 'aucun' &&
+                  !isPassiveEffect(card.effet)));
             return (
               <CardView
                 key={card.instanceId}
@@ -535,7 +588,7 @@ export function Combat() {
           <p className="text-xs text-slate-400 text-center">
             {mode === 'attaque'
               ? 'Sélectionne un allié, puis une cible ennemie.'
-              : 'Effet auto si soin / bouclier / rage ; sinon choisis une cible ennemie.'}
+              : 'Effet auto si soin / bouclier / rage / AoE ; sinon choisis une cible ennemie.'}
           </p>
         </div>
       )}

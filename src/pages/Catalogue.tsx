@@ -9,10 +9,13 @@ const FILTER_ACCENT: Record<Rarity | 'tous', string> = {
   commun: 'bg-slate-500/20 border-slate-400/50 text-slate-200',
   peu_commun: 'bg-emerald-500/20 border-emerald-400/50 text-emerald-200',
   rare: 'bg-blue-500/20 border-blue-400/50 text-blue-200',
-  super_rare: 'bg-purple-500/20 border-purple-400/50 text-purple-200',
-  ultra_rare: 'bg-amber-500/20 border-yellow-400/50 text-yellow-200',
+  epique: 'bg-purple-500/20 border-purple-400/50 text-purple-200',
   legendaire: 'bg-rose-500/20 border-rose-400/50 text-rose-200',
-  dieu: 'bg-fuchsia-500/20 border-fuchsia-400/50 text-fuchsia-200',
+  mythique: 'bg-amber-500/20 border-amber-400/50 text-amber-200',
+  divine: 'bg-fuchsia-500/20 border-fuchsia-400/50 text-fuchsia-200',
+  celeste: 'bg-cyan-500/20 border-cyan-400/50 text-cyan-200',
+  supreme: 'bg-orange-500/20 border-orange-400/50 text-orange-200',
+  unique: 'bg-pink-500/20 border-pink-400/50 text-pink-200',
 };
 
 export function Catalogue() {
@@ -28,10 +31,13 @@ export function Catalogue() {
       commun: 0,
       peu_commun: 0,
       rare: 0,
-      super_rare: 0,
-      ultra_rare: 0,
+      epique: 0,
       legendaire: 0,
-      dieu: 0,
+      mythique: 0,
+      divine: 0,
+      celeste: 0,
+      supreme: 0,
+      unique: 0,
     };
     for (const card of CATALOGUE) c[card.rarete] += 1;
     return c;

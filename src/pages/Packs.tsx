@@ -14,12 +14,20 @@ function oddsLabel(r: Rarity): string {
   return `${Math.round(pct)}%`;
 }
 
-function isLegendary(r: Rarity): boolean {
-  return r === 'legendaire';
+function isHighlightRare(r: Rarity): boolean {
+  return r === 'legendaire' || r === 'mythique' || r === 'divine' || r === 'unique';
 }
 
 function isEpicTier(r: Rarity): boolean {
-  return r === 'legendaire' || r === 'dieu';
+  return (
+    r === 'epique' ||
+    r === 'legendaire' ||
+    r === 'mythique' ||
+    r === 'divine' ||
+    r === 'celeste' ||
+    r === 'supreme' ||
+    r === 'unique'
+  );
 }
 
 export function Packs() {
@@ -57,14 +65,14 @@ export function Packs() {
     setPhase('reveal');
 
     // Flip after a short suspense beat
-    const suspense = isLegendary(card.rarete) ? 700 : 350;
+    const suspense = isHighlightRare(card.rarete) ? 700 : 350;
     later(() => {
       setFlipped(true);
-      if (isLegendary(card.rarete)) {
+      if (isHighlightRare(card.rarete)) {
         setShowLegendFx(true);
       }
 
-      const hold = isLegendary(card.rarete) ? 3200 : isEpicTier(card.rarete) ? 1800 : 1100;
+      const hold = isHighlightRare(card.rarete) ? 3200 : isEpicTier(card.rarete) ? 1800 : 1100;
       later(() => {
         setShowLegendFx(false);
         if (i + 1 < pack.length) {
@@ -179,7 +187,7 @@ export function Packs() {
           <div className="pack-stage relative flex items-center justify-center w-full max-w-md mx-auto">
             <div
               className={`card-flip-scene ${flipped ? 'is-flipped' : ''} ${
-                flipped && isLegendary(current.rarete) ? 'legend-pulse' : ''
+                flipped && isHighlightRare(current.rarete) ? 'legend-pulse' : ''
               }`}
             >
               <div className="card-flip-inner">
@@ -204,7 +212,7 @@ export function Packs() {
               <p className="font-display text-lg text-white">{current.nom}</p>
               <p
                 className={`text-sm font-semibold tracking-wide ${
-                  isLegendary(current.rarete)
+                  isHighlightRare(current.rarete)
                     ? 'text-rose-300 legend-title-glow'
                     : 'text-amber-200/90'
                 }`}
@@ -277,7 +285,7 @@ export function Packs() {
             Pack Admin : <strong>100&nbsp;% légendaire</strong> (outil de test).
           </p>
           <ul className="grid sm:grid-cols-2 gap-1.5">
-            {[...RARITY_ORDER].reverse().map((r) => (
+            {[...RARITY_ORDER].reverse().filter((r) => RARITY_WEIGHTS[r] > 0).map((r) => (
               <li key={r} className="flex justify-between gap-2 border-b border-white/5 pb-1">
                 <span>{RARITY_LABELS[r]}</span>
                 <span className="tabular-nums text-slate-300">{oddsLabel(r)}</span>

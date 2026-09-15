@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { RARITY_COLORS, RARITY_GLOW, RARITY_LABELS } from '../data/cards';
 import type { BattleCard, CardDefinition, Rarity } from '../types';
 import { fallbackArtDataUrl, resolveCardImage } from '../utils/cardArt';
+import { isPassiveEffect } from '../utils/combat';
 
 type Props = {
   card: CardDefinition | BattleCard;
@@ -86,7 +87,7 @@ export function CardView({
         <span className="absolute top-1.5 right-1.5 z-10 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-white/95 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded border border-white/15">
           {RARITY_LABELS[rarete]}
         </span>
-        {rarete === 'dieu' || rarete === 'legendaire' || rarete === 'ultra_rare' ? (
+        {rarete === 'legendaire' || rarete === 'mythique' || rarete === 'divine' || rarete === 'celeste' || rarete === 'supreme' || rarete === 'unique' ? (
           <div className="pointer-events-none absolute inset-0 foil-shimmer opacity-35" />
         ) : null}
       </div>
@@ -162,7 +163,22 @@ export function CardView({
             {card.etourdi && (
               <span className="text-[9px] bg-yellow-600/80 px-1 rounded">Étourdi</span>
             )}
-            {!card.effetUtilise && card.effet !== 'aucun' && card.vie > 0 && (
+            {card.marks > 0 && (
+              <span className="text-[9px] bg-rose-800/90 px-1 rounded">Marque {card.marks}/3</span>
+            )}
+            {card.dodgeLeft > 0 && (
+              <span className="text-[9px] bg-cyan-700/80 px-1 rounded">Esquive</span>
+            )}
+            {card.blockNext && (
+              <span className="text-[9px] bg-indigo-700/80 px-1 rounded">Parade</span>
+            )}
+            {card.taunt && card.vie > 0 && (
+              <span className="text-[9px] bg-amber-700/80 px-1 rounded">Provocation</span>
+            )}
+            {!card.effetUtilise &&
+              card.effet !== 'aucun' &&
+              !isPassiveEffect(card.effet) &&
+              card.vie > 0 && (
               <span className="text-[9px] bg-fuchsia-700/80 px-1 rounded">Effet dispo</span>
             )}
           </div>
