@@ -9,7 +9,7 @@ import { Packs } from './pages/Packs';
 export default function App() {
   return (
     <CollectionProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/tcg-packs-combat">
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
